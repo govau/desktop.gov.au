@@ -13,14 +13,14 @@ HybridSystem.
 
 ### System overview
 
-The HybridSystem leverages the Information Security Registered Assessors Program (IRAP) assessed Microsoft Azure, Office 365 platforms and their associated services. As well as leveraging an Agencies existing on-premises environment. The Blueprint includes the following components to improve the security posture of a target Agency:
+The HybridSystem leverages the Information Security Registered Assessors Program (IRAP) assessed Microsoft Azure, Microsoft 365 platforms and their associated services. As well as leveraging an Agencies existing on-premises environment. The Blueprint includes the following components to improve the security posture of a target Agency:
 
 * Cloud identity – Synchronising identities from Active Directory (AD) to Azure Active Directory (Azure AD) for authentication. Azure AD configuration including conditional access allowing log in from anywhere and appropriate security policies to be applied.
-* Office 365 – Configuration of Exchange Online, SharePoint Online, OneDrive for Business, Microsoft Teams, Microsoft Forms, Microsoft Whiteboard and Microsoft Planner allowing cloud-based file storage and collaboration.
+* Microsoft 365 – Configuration of Exchange Online, SharePoint Online, OneDrive for Business, Microsoft Teams, Microsoft Forms, Microsoft Whiteboard and Microsoft Planner allowing cloud-based file storage and collaboration.
 * Hybrid – Configuration between on-premises Exchange and Exchange Online, on-premises SharePoint and SharePoint Online to provide a seamless transition and extend cloud security capabilities.
 * Device management – Management of security and configuration profiles for enrolled devices including the testing against security baselines and confirmation of security compliance.
 * Applications – Delivery and configuration of applications appropriate to the user.
-* Security stack – Security configuration of Office 365 and endpoint devices to maximise compliance and minimise risk.
+* Security stack – Security configuration of Microsoft 365 and endpoint devices to maximise compliance and minimise risk.
 * Autopilot deployment – Configuration of Autopilot to allow for automated deployment (and redeployment when required) of devices with no user interaction.
 * Support – A flexible support model where system administration and Role Based Access Control (RBAC) is provided regardless of whether the support is carried out by in house staff, third party contractors or a managed service provider.
 
@@ -32,15 +32,15 @@ The HybridSystem is designed to be able to achieve and maintain security accredi
 
 The HybridSystem is intended to achieve a PROTECTED standard and raise Australian Government agencies cyber security posture. The HybridSystem details technology and configuration settings to deploy a hybrid Microsoft 365 solution for Agencies wanting to integrate with their existing on-premises environment.
 
-Note: The Microsoft 365 suite includes multiple products including Windows 10, Office 365 and Enterprise Mobility + Security (EM+S).
+Note: The Microsoft 365 suite includes multiple products including Windows 10, Microsoft 365 and Enterprise Mobility + Security (EM+S).
 
 ### System boundary
 
-The boundary of the system is the subscription level of the Microsoft 365 implementation and the Agency’s on-premises servers (Exchange, SharePoint, Configuration Manager and Active Directory) the HybridSystem leverages. The tenancy and all Microsoft 365 components (including both Azure and Office 365 hosted services), the transport of data between the endpoint devices and cloud services along with the endpoint devices themselves are included within the system. Network components are not considered to be part of the system.
+The boundary of the system is the subscription level of the Microsoft 365 implementation and the Agency’s on-premises servers (Exchange, SharePoint, Configuration Manager and Active Directory) the HybridSystem leverages. The tenancy and all Microsoft 365 components (including both Azure and Microsoft 365 hosted services), the transport of data between the endpoint devices and cloud services along with the endpoint devices themselves are included within the system. Network components are not considered to be part of the system.
 
 As shown in Figure 1 the system therefore includes:
 
-* Office 365 (including Azure AD)
+* Microsoft 365 (including Azure AD)
 * Multi-Factor Authentication (MFA)
 * Subscription and its management
 * Tenancy and its management
@@ -54,7 +54,7 @@ Note: This means that Transport Layer Security (TLS) would be included within th
 
 ### Document purpose and scope
 
-The purpose of this System Security Plan (SSP) is to describe the security implementation of the HybridSystem, including the underlying Azure and Office 365 components that are leveraged in its deployment. This document is designed to comply with the Australian Government Information Security Manual (ISM) documentation requirements for system authorisation.
+The purpose of this System Security Plan (SSP) is to describe the security implementation of the HybridSystem, including the underlying Azure and Microsoft 365 components that are leveraged in its deployment. This document is designed to comply with the Australian Government Information Security Manual (ISM) documentation requirements for system authorisation.
 
 This document is deliberately written using descriptive and explanatory language to assist an Agency to understand how the HybridSystem operates securely, the security controls it provides, and the residual controls that must be addressed by an Agency.
 
@@ -78,13 +78,13 @@ In accordance with the requirements of the ISM, the following security documenta
 * DTA – Blueprint – Client Devices Design (August 2020)
 * DTA – Blueprint – Platform Design (August 2020)
 * DTA – Blueprint – Office 365 Design (August 2020)
-* DTA – Hybrid Blueprint – System Security Plan (April 2021) (this document)
-* DTA – Hybrid Blueprint – System Security Plan Annex (April 2021)
-* DTA – Hybrid Blueprint – Security Risk Management Plan (April 2021)
+* DTA – Hybrid Blueprint – System Security Plan (June 2021) (this document)
+* DTA – Hybrid Blueprint – System Security Plan Annex (June 2021)
+* DTA – Hybrid Blueprint – Security Risk Management Plan (June 2021)
 * DTA – Hybrid Blueprint – Standard Operating Procedures (April 2021)
 * DTA – Hybrid Blueprint – Incident Response Plan (April 2021)
 
-The suite of documentation produced to support ACSC’s certification of Azure and Office 365 for PROTECTED have also been leveraged in the development of the HybridSystem, and includes the following :
+The suite of documentation produced to support ACSC’s certification of Azure and Microsoft 365 for PROTECTED have also been leveraged in the development of the HybridSystem, and includes the following :
 
 * 2020 Microsoft Azure IRAP - Azure Security Fundamentals and Cloud Services Assessment
 * Office 365 Security Fundamentals and Cloud Services IRAP Assessment Report 2020
@@ -98,7 +98,7 @@ The results of the threat and risk assessment undertaken on the HybridSystem are
 
 ## Assessment of services
 
-This section provides details of the security assessment status of each Azure and Office 365 service used by the HybridSystem as listed in their respective IRAP reports. The assessment status of each of the utilised services and any associated mitigations is shown in Table 1.
+This section provides details of the security assessment status of each Azure and Microsoft 365 service used by the HybridSystem as listed in their respective IRAP reports. The assessment status of each of the utilised services and any associated mitigations is shown in Table 1.
 
 Table 1 Assessment of Services
 
@@ -109,7 +109,7 @@ Identity Services | Azure AD | PROTECTED | N/A
 Identity Services | Conditional Access | Not Assessed | Conditional Access is an Azure AD Premium P1 licenced feature of Azure AD (included in Microsoft 365 E3) that restricts access to cloud resources and management tools beyond just a successful authentication. It includes customisable policies based on location, user, device and more. Conditional Access is an additional security capability that is part of Azure AD, which is PROTECTED certified. 
 Identity Services | Azure MFA | PROTECTED | N/A
 Identity Services | Azure AD Identity Protection | Not Assessed | Azure AD Identity Protection is an Azure AD Premium P2 licenced feature of Azure AD (included in Microsoft 365 E5) that allows organisations to accomplish three key tasks:<br><br>* Automate the detection and remediation of identity-based risks.<br>* Investigate risks using data in the portal.<br>* Export risk detection data to third-party utilities for further analysis.
-Office 365 | Exchange Online, SharePoint Online, Microsoft Teams, Microsoft Forms, Microsoft Whiteboard, Microsoft Planner | PROTECTED | N/A
+Microsoft 365 | Exchange Online, SharePoint Online, Microsoft Teams, Microsoft Forms, Microsoft Whiteboard, Microsoft Planner | PROTECTED | N/A
 Monitoring and Compliance | Intune Policies | PROTECTED | Microsoft Endpoint Manager - Intune (Intune) is configured to allow policies to be created and deployed to devices that configure, check for compliance and assess against a security baseline. These policies are applied and reported against in the Intune web console.
 
 ## Section definitions
@@ -120,7 +120,7 @@ Table 2 Section Definitions
 
 Section | Description
 --- | ---
-Applicability to HybridSystem | For each chapter, the applicability relates to whether the HybridSystem provides any technical, process or documentation that need to be assessed.<br><br>The HybridSystem inherits many controls from the underlying Azure and Office 365 platforms, so if a chapter is listed as Not Applicable then the Agency may or may not be required to address the control. The reason the chapter is not applicable is stated in this section and if the Agency is required to address the controls then this is listed in the Residual controls to be addressed by the Agency section.
+Applicability to HybridSystem | For each chapter, the applicability relates to whether the HybridSystem provides any technical, process or documentation that need to be assessed.<br><br>The HybridSystem inherits many controls from the underlying Azure and Microsoft 365 platforms, so if a chapter is listed as Not Applicable then the Agency may or may not be required to address the control. The reason the chapter is not applicable is stated in this section and if the Agency is required to address the controls then this is listed in the Residual controls to be addressed by the Agency section.
 HybridSystem compliance approach | The compliance approach for the HybridSystem is described in this section to provide:<br><br>* The background and context for how the HybridSystem address the controls in the chapter<br>* To provide the Agency with information to assist in the assessment of the HybridSystem
 Security controls provided by the HybridSystem | The specific technical, process or documentation that the HybridSystem provides to address the controls are listed in this section.
 Residual controls to be addressed by the Agency | If there are any residual controls that the Agency must address in relation to the operation of the HybridSystem, then they are listed in this section.
@@ -137,23 +137,23 @@ Guidelines for Cyber Security Roles | Not Applicable | Fulfilling these roles is
 Guidelines for Cyber Security Incidents | Not Applicable | The Agency is responsible for identifying, managing and reporting cyber security incidents.
 Guidelines for Outsourcing | Applicable  | Shared responsibility between the HybridSystem and the Agency consuming it.
 Guidelines for Security Documentation | Applicable | The HybridSystem provides system-specific documentation to be read in conjunction with the Agency’s cyber security strategy.
-Guidelines for Physical Security | Not Applicable | The HybridSystem inherits the physical security controls which are implemented by Microsoft for Azure and Office 365 components.
+Guidelines for Physical Security | Not Applicable | The HybridSystem inherits the physical security controls which are implemented by Microsoft for Azure and Microsoft 365 components.
 Guidelines for Personnel Security | Not Applicable | The Agency is responsible for the personnel security as it relates to users of the HybridSystem.
 Guidelines for Communications Infrastructure | Not Applicable | The Agency is responsible for communications infrastructure leveraged by the HybridSystem.
 Guidelines for Communications Systems | Applicable | The HybridSystem includes Microsoft Teams which provides video conferencing functionality.
 Guidelines for Enterprise Mobility | Applicable | The HybridSystem includes the management and use of mobile devices.
-Guidelines for Evaluated Products | Applicable | The HybridSystem includes Windows 10 which has been evaluated. Additionally, the HybridSystem leverages Office 365 services which include evaluated products.
-Guidelines for ICT Equipment Management | Not Applicable | The HybridSystem does not contain any Information and Communications Technology (ICT) Equipment, and the security of the Azure and Office 365 hosting equipment is the responsibility of Microsoft.
+Guidelines for Evaluated Products | Applicable | The HybridSystem includes Windows 10 which has been evaluated. Additionally, the HybridSystem leverages Microsoft 365 services which include evaluated products.
+Guidelines for ICT Equipment Management | Not Applicable | The HybridSystem does not contain any Information and Communications Technology (ICT) Equipment, and the security of the Azure and Microsoft 365 hosting equipment is the responsibility of Microsoft.
 Guidelines for Media | Applicable | The HybridSystem is responsible for restricting the use of unapproved media.
 Guidelines for System Hardening | Applicable | Hardening of operating systems and applications included in the HybridSystem is applicable.
 Guidelines for System Management | Applicable | Management of HybridSystem system components is applicable.
 Guidelines for System Monitoring | Applicable | Monitoring of HybridSystem system components is applicable.
 Guidelines for Software Development | Not Applicable | The HybridSystem is not designed to support software development activities.
 Guidelines for Database Systems | Not Applicable | The Agency is responsible for database systems leveraged by the HybridSystem.
-Guidelines for Email | Applicable | The HybridSystem leverages Office 365 to provide email functionality.
-Guidelines for Networking | Applicable | The HybridSystem is designed to run using the public internet. All security controls are implemented on the endpoint devices and the Office 365 component. The Office 365 design includes a high-level network diagram showing the components that are considered in scope. Conditional access policies and MCAS to limit access to the environment from anonymity networks. The configuration and fine tuning of these policies is the shared responsibility of the Agency and the HybridSystem.
+Guidelines for Email | Applicable | The HybridSystem leverages Microsoft 365 to provide email functionality.
+Guidelines for Networking | Applicable | The HybridSystem is designed to run using the public internet. All security controls are implemented on the endpoint devices and the Microsoft 365 component. The Microsoft 365 design includes a high-level network diagram showing the components that are considered in scope. Conditional access policies and MCAS to limit access to the environment from anonymity networks. The configuration and fine tuning of these policies is the shared responsibility of the Agency and the HybridSystem.
 Guidelines for Cryptography | Applicable | The HybridSystem makes use of cryptography to protect both data at rest and data in transit.
-Guidelines for Gateways | Applicable | The HybridSystem leverages Exchange Online Protection and Office 365 Advanced Threat Protection (ATP) for content filtering.
+Guidelines for Gateways | Applicable | The HybridSystem leverages Exchange Online Protection and Microsoft 365 Advanced Threat Protection (ATP) for content filtering.
 Guidelines for Data Transfers | Applicable | The HybridSystem is responsible for implementing technical controls relating to data transfer and content filtering.
 
 ## Cyber security roles
@@ -271,11 +271,11 @@ Not applicable.
 
 #### Applicability to HybridSystem
 
-Outsourcing is applicable to the HybridSystem as it leverages both Azure and Office 365, which are cloud services.
+Outsourcing is applicable to the HybridSystem as it leverages both Azure and Microsoft 365, which are cloud services.
 
 #### HybridSystem compliance approach
 
-The HybridSystem leverages Microsoft Azure and Office 365, which have been IRAP assessed at PROTECTED by CyberCX. All HybridSystem services have been IRAP assessed.
+The HybridSystem leverages Microsoft Azure and Microsoft 365, which have been IRAP assessed at PROTECTED by CyberCX. All HybridSystem services have been IRAP assessed.
 
 Azure AD is defined as a non-regional service, but [hosts identity data in Australian datacentres](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-data-storage-australia) for customers that provide an Australian or New Zealand address . This includes Azure AD Directory Management and Authentication functions. Other Azure AD functions, including Azure MFA, store data in global datacentres.
 
@@ -283,16 +283,16 @@ Where possible the HybridSystem leverages services located in Australia, otherwi
 
 #### Security controls provide by the HybridSystem
 
-* Australian data locations have been selected where supported by Azure and Office 365 services leveraged by the HybridSystem.
+* Australian data locations have been selected where supported by Azure and Microsoft 365 services leveraged by the HybridSystem.
 * Microsoft provides a shared responsibility model which outlines how security responsibilities are shared between itself and the Agency.
 
 #### Residual controls to be addressed by the Agency
 
 * The Agency must assess, establish, manage and maintain the commercial and contractual relationship with Microsoft as the provider of the cloud services and review changes to the Microsoft IRAP assessments as they occur.
 
-#### Shared responsibility 
+#### Shared responsibility
 
-When consuming a cloud service, management of some security controls is transferred from the agency to the Cloud Service Provider (CSP), in this case Microsoft. The level of control transferred ultimately depends on the type of services being consumed i.e. cloud native or hybrid deployment and the agreement made with Microsoft. 
+When consuming a cloud service, management of some security controls is transferred from the agency to the Cloud Service Provider (CSP), in this case Microsoft. The level of control transferred ultimately depends on the type of services being consumed i.e. cloud native or hybrid deployment and the agreement made with Microsoft.
 
 Whilst responsibility for controls may be shared, agencies must be conscious that security risk is not transferred to the service provider. It is therefore critical that agencies understand how the sharing of responsibilities impacts system risk and what impact it may have on [Assessing and Authorising the system within their environment](https://www.cyber.gov.au/acsc/view-all-content/publications/anatomy-cloud-assessment-and-authorisation).
 
@@ -320,7 +320,7 @@ When deploying a hybrid model, in the context of Software as a Service (SaaS) pr
 
 Overall, the agency is deemed accountable for any technology platform when in use with Microsoft or external product vendors responsible for parts of the platform operational management.
 
-A suggested high-level shared responsibility matrix for the technology stack across the platform, Microsoft Office 365 and client devices has been tabled below. There are three defined stakeholders who share the responsibility to maintain the agency’s security capabilities.
+A suggested high-level shared responsibility matrix for the technology stack across the platform, Microsoft 365 and client devices has been tabled below. There are three defined stakeholders who share the responsibility to maintain the agency’s security capabilities.
 
 * **Agency**: Australian government agency adapting and implementing the DTA hybrid blueprint.
 * **Microsoft**: CSP who provide and/or manage the defined technology platforms.
@@ -557,15 +557,17 @@ This section is applicable as the HybridSystem includes mobile devices.
 
 The HybridSystem leverages Microsoft Endpoint Manager - Intune (Intune) to provide both Mobile Device Management (MDM) and Mobile Application Management (MAM) controls to protect mobile devices and data stored on them. Both Windows laptops and iOS devices will be enrolled within Intune and tagged as Corporate devices, allowing policies to be centrally managed and deployed. This includes configuring storage encryption, disabling unneeded features and controlling application behaviour.
 
-iOS devices are lightly managed and partially comply with the ACSC ‘[Security Configuration Guide - Apple iOS 12 Devices](https://www.cyber.gov.au/publications/security-configuration-guide-apple-ios-12-devices)’ and Information Security Manual (ISM) to maximise usability for the target users. Note: Agencies should do a risk assessment before deciding to change settings relating mobile devices.
+iOS devices are configured to align to the intent of the ACSC ‘[Security Configuration Guide - Apple iOS 14 Devices](https://www.cyber.gov.au/acsc/view-all-content/publications/security-configuration-guide-apple-ios-14-devices)’ and the Information Security Manual (ISM). iOS devices within the blueprint limit user access and some usability in order to reach a higher security and compliance level.
+
+Note: Agencies should conduct a threat and risk assessment prior to changing the described configuration of mobile devices.
 
 Bluetooth is enabled as it allows users to pair devices they may required to perform their duties (e.g. conference calls or online meetings).
 
-Users can reset certain security settings in Personal Hotspot and Passcode for situations where the passcode/password may have been compromised. 
+Users can reset certain security settings in Personal Hotspot and Passcode for situations where the passcode/password may have been compromised.
 
-To provide ease of use and maintain productivity users can download apps from the App Store. The agency can track, and monitor apps found on managed devices that have been enrolled in Intune. Details on how to view and report on discovered apps can be found in the ‘DTA - Hybrid Blueprint - Security Standard Operating Procedures (August 2020)’.
+All iOS applications must be deployed using Microsoft Endpoint Manager with volume licensing. Users are not able to access the App store to update or download applications. All updates are managed via Intune update policies. The agency can track, and monitor apps found on managed devices that have been enrolled in Intune. Details on how to view and report on discovered apps can be found in the ‘DTA - Cloud-Native Blueprint - Security Standard Operating Procedures (August 2020)’.
 
-The risk of lightly managed iOS devices is addressed in the ‘[DTA - Hybrid Blueprint - Security Risk Management Plan (August 2020)](hybrid-security-risk-management-plan.html)’ at [R17](hybrid-security-risk-management-plan.html#r17-mobile-device-compromised).
+The risk of supervised iOS devices is addressed in the ‘[DTA - Hybrid Blueprint - Security Risk Management Plan (June 2021)](hybrid-security-risk-management-plan.html)’ at [R17](hybrid-security-risk-management-plan.html#r17-mobile-device-compromised) and [R22](hybrid-security-risk-management-plan.html#r22-mobile-phone-exploited).
 
 #### Security controls provided by the HybridSystem
 
@@ -754,6 +756,7 @@ Endpoint Device Control will be configured by Intune policies restricting usage 
 * The 64-bit version of Windows 10 is used as the SOE for the HybridSystem.
 * The Windows 10 SOE has been hardened in accordance with ACSC guidance where possible using Intune.
 * The default administrator and guest accounts have been disabled and renamed.
+* Additional administrators can be added to endpoints via Azure AD groups, with configuration changes pulled to devices via Intune.
 * Intune and MECM policies prevent standard users from running cmd.exe however can only restrict the PowerShell execution policy to RemoteSigned.
 * RBAC policy defines separate domain and local administrator roles. Standard users do not have permissions to install or uninstall software.
 * WDAC provides application control functionality. A combination of hash, publisher certificate and path rules will be used by WDAC for control of applications. Both publisher and product names are used by WDAC for control of applications. WDAC writes to the local event log. Standard users cannot disable application control.
@@ -764,6 +767,7 @@ Endpoint Device Control will be configured by Intune policies restricting usage 
 * Windows Defender Firewall is enabled as part of the HybridSystem Windows 10 SOE.
 * Defender Antivirus and Defender ATP provide antivirus including signature and heuristic-based detection. Reputation rating features are enabled.
 * Intune and MECM provides device access control by DeviceID or Device Class.
+* Windows Defender Firewall has been configured via Microsoft Endpoint Manager - Intune configuration profiles to block all non-approved inbound or outbound traffic from Windows 10 endpoints.
 
 #### Residual controls to be addressed by the Agency
 

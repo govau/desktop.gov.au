@@ -5,7 +5,7 @@ menu: security
 download: true
 ---
 
-This Security Risk Management Plan (SRMP) has been developed to demonstrate the reduction in risk that can be achieved by implementing the HybridSystem to secure access to Microsoft Office 365 services from Windows 10 endpoints and iOS mobile devices. 
+This Security Risk Management Plan (SRMP) has been developed to demonstrate the reduction in risk that can be achieved by implementing the HybridSystem to secure access to Microsoft Office 365 services from Windows 10 endpoints and iOS mobile devices.
 
 Each risk has been assessed in the context of the controls implemented by the HybridSystem directly, those implemented by Microsoft as part of the Office 365 service, as well as those that are expected to be implemented by Australian Government Agencies that will leverage the HybridSystem. The risk matrix, including definitions of likelihood and consequence, is provided at [Risk Matrix](/assets/files/security/risk-matrix.pdf). Agencies leveraging the HybridSystem should review the risk ratings and align them to their internal risk management framework as applicable.
 
@@ -33,11 +33,12 @@ R13 | Attacker bypasses application control capability | High | Medium | Medium
 R14 | Password spray attack directed at Azure AD | High | Medium | Medium
 R15 | Lack of availability due to cloud service provider outage | Medium | Low | Low
 R16 | Privileged Access Workstations not implemented for administration | High | Medium | Medium
-R17 | Mobile device compromised | High | High | High
+R17 | Mobile phone compromised due to loss or theft | High | Medium | Medium
 R18 | Use of un-assessed cloud services creates exposures | High | Medium | Medium
 R19 | Users declassifying emails without the owner’s permission  | High | Medium | Medium
 R20 | Compromise of the Azure AD Connect database | Medium | Medium | Medium
 R21 | Compromise of the SharePoint database | Medium | Medium | Medium
+R22 | R22 Mobile phone exploited | High | Medium | Medium
 
 ## Introduction
 
@@ -51,7 +52,7 @@ The purpose of this SRMP is to identify the risks and the residual risk to an Ag
 
 ### Scope
 
-The scope of this SRMP is limited to those threats and risks specific to the use of Office 365 as part of the HybridSystem. 
+The scope of this SRMP is limited to those threats and risks specific to the use of Office 365 as part of the HybridSystem.
 
 The Microsoft Office 365 service is addressed in the Information Security Registered Assessors Program (IRAP) report (available in the [Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/Australia)) therefore risks specific to the underlying Office 365 service are not reassessed by this SRMP.
 
@@ -84,7 +85,7 @@ If a privileged account were to be compromised or system privileges were incorre
 
 * Obtain unauthorised access to:
   * Deny access to agency information to authorised users
-  * Modify agency information and making the integrity of the information unavailable or no longer trustworthy 
+  * Modify agency information and making the integrity of the information unavailable or no longer trustworthy
   * Obfuscate adversary actions
 * Obtain information by opportunistically stealing or scavenging information systems/components
 * Compromise organisational information systems to facilitate exfiltration of data/information
@@ -108,7 +109,7 @@ If a privileged account were to be compromised or system privileges were incorre
   * Agency IT Security Policy for authorised staff to not provide privileged access to unauthorised staff and not allow logging in using service accounts
   * Administrative break glass accounts will only be utilised when no other privileged account can be utilised
   * Approval process to obtain a privileged user account
-  * Training to agency nominated system administrators 
+  * Training to agency nominated system administrators
 * HybridSystem treatments
   * Conditional Access enforces Multi-Factor Authentication (MFA) for all privileged users
   * Azure AD Identity Protection configured to alert on detected identity-based and sign-in risks
@@ -116,7 +117,7 @@ If a privileged account were to be compromised or system privileges were incorre
   * The solution leverages built-in Azure AD / Office 365 Role Groups to implement a robust Role-Based Access Control (RBAC) model
   * All Azure AD and Office 365 logs are centralised into a single Log Analytics workspace
   * Emergency access accounts are configured in accordance with [Microsoft best practice](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-emergency-access) to prevent administrators from being locked-out of Azure services
-  * Azure Advanced Threat Protection (Azure ATP) monitors 
+  * Azure Advanced Threat Protection (Azure ATP) monitors
 
 #### Residual likelihood
 
@@ -160,7 +161,7 @@ A user sends an OFFICIAL: Sensitive or PROTECTED classified mail/attachment, or 
 
 #### Assets affected
 
-* OFFICIAL: Sensitive and PROTECTED data 
+* OFFICIAL: Sensitive and PROTECTED data
 * Personal information
 
 #### Threat sources
@@ -280,7 +281,6 @@ An unauthorised user attempts to access data hosted within Microsoft’s Office 
   * Pass through authentication (PTA) method is utilized for credentials in Azure authentication
   * Data transfer logs are retained
 
-
 #### Residual likelihood
 
 2 – Unlikely
@@ -365,7 +365,7 @@ An malicious insider attempts to disable cloud-based security capabilities (e.g.
 #### Proposed treatments
 
 * Forward logs to a Security Information and Event Management (SIEM) solution
-* Agency training for security and system administrators for the use of Security Centre 
+* Agency training for security and system administrators for the use of Security Centre
 * Monitoring of events within Security Centre
 
 #### Target likelihood
@@ -517,7 +517,7 @@ Malicious code introduced to the environment by one or more vectors leading to t
 #### Proposed treatments
 
 * Forward logs to a Security Information and Event Management (SIEM) solution
-* Agency training for security and system administrators for the use of Security Centre 
+* Agency training for security and system administrators for the use of Security Centre
 * Monitoring of events within Security Centre
 
 #### Target likelihood
@@ -540,7 +540,7 @@ An unauthorised user attempts to access email within mailboxes hosted in Exchang
 
 #### Assets affected
 
-* Sensitive and or security classified data 
+* Sensitive and or security classified data
 
 #### Threat sources
 
@@ -1290,13 +1290,13 @@ Administration of the system is undertaken by authorised privileged users by con
 
 2 - Medium
 
-### R17 Mobile device compromised
+### R17 Mobile phone compromised due to loss or theft
 
 #### Risk overview
 
-An Apple iOS device used to access Sensitive and or security classified data is compromised as a result of the [ACSC’s Security Configuration Guide - Apple iOS 12 Devices](https://www.cyber.gov.au/publications/security-configuration-guide-apple-ios-12-devices) (September 2019)  not being fully implemented due to the usability impacts. 
+An Apple iOS device used to access Sensitive and or security classified information is compromised as a result of the device being lost or stolen.
 
-Note, the HybridSystem does not include the use of devices using the Android operating system.
+Note: the HybridSystem does not include the use of devices using the Android operating system.
 
 #### Assets affected
 
@@ -1305,7 +1305,6 @@ Note, the HybridSystem does not include the use of devices using the Android ope
 
 #### Threat sources
 
-* Adversarial – Individual – Insider, Trusted Insider, Privileged Insider
 * Adversarial – Individual – Outsider
 * Adversarial – Group – Established
 * Adversarial – Nation State
@@ -1313,8 +1312,6 @@ Note, the HybridSystem does not include the use of devices using the Android ope
 
 #### Threat events
 
-* Obtain unauthorised access
-* Exploit recently discovered vulnerabilities
 * Theft or loss of device
 
 #### Inherent likelihood
@@ -1335,17 +1332,19 @@ Note, the HybridSystem does not include the use of devices using the Android ope
   * Policy governing the use and management of mobile devices used to access classified information
   * Awareness training for users with mobile devices
 * HybridSystem treatments
-  * Partial implementation of the ACSC’s Security Configuration Guide for iOS 12 devices:
-    1. Supervised mode
+  * Full alignment with the intent of the ACSC's Security Configuration Guide for iOS 14 devices:
+    1. Supervised mode for all devices
     1. Long and complex alphanumeric device passcode
     1. Biometric device unlock disabled
-    1. Management of built-in apps (e.g., iOS Camera and Books)
+    1. Management of all apps
     1. Implementation of Intune App Protection policies
-  * Conditional Access policies require iOS devices to be compliant, using applications with modern authentication and MFA
   * Conditional Access policies only allow access from specified countries
   * Conditional Access policies block sign-ins that are determined to be high risk
   * Intune enforces configuration policies for iOS devices including requirement for unlock code, device encryption (native iOS AES-256 encryption), minimum software version and jailbreak detection
   * Data transfer logs are retained
+  * Devices can be located using Microsoft Endpoint Manager
+  * iOS devices wipe their contents after 11 failed sign-in attempts
+  * iOS devices can be remotely wiped through Microsoft Endpoint Manager
 
 #### Residual likelihood
 
@@ -1353,11 +1352,11 @@ Note, the HybridSystem does not include the use of devices using the Android ope
 
 #### Residual consequence
 
-3 – Moderate
+2 - Minor
 
 #### Residual risk rating
 
-3 – High
+2 - Medium
 
 #### Proposed treatments
 
@@ -1369,11 +1368,11 @@ None
 
 #### Target consequence
 
-3 – Moderate
+2 – Minor
 
 #### Target risk rating
 
-3 – High
+2 – Medium
 
 ### R18 Use of un-assessed cloud services creates exposures
 
@@ -1653,3 +1652,87 @@ None
 #### Target risk rating
 
 2 – Medium
+
+### R22 Mobile phone exploited
+
+#### Risk overview
+
+An Apple iOS mobile device used to access sensitive or security classified information is compromised or exploited either as a result of unauthorized access to the device or exploitation of a recently discovered vulnerability.
+
+#### Assets affected
+
+* iOS Devices
+* Sensitive or security classified information
+
+#### Threat sources
+
+* Adversarial – Individual – Outsider
+* Adversarial – Group – Established
+* Adversarial – Nation State
+* Unintentional – General user
+
+#### Threat events
+
+* Obtain unauthorised access to the device
+* Exploit recently discovered vulnerabilities
+
+#### Inherent likelihood
+
+2 – Possible
+
+#### Inherent consequence
+
+3 – Moderate
+
+#### Inherent risk rating
+
+2 - High
+
+#### Ongoing and completed treatments
+
+* Agency treatments
+  * Policy governing the use and management of mobile devices used to access classified information
+  * Awareness training for users with mobile devices
+* HybridSystem treatments
+  * Full alignment with the intent of the ACSC's Security Configuration Guide for iOS 14 devices:
+    1. Supervised mode for all devices
+    1. Long and complex alphanumeric device passcode
+    1. Biometric device unlock disabled
+    1. Management of all apps
+    1. Implementation of Intune App Protection policies
+  * Conditional Access policies only allow access from specified countries
+  * Conditional Access policies block sign-ins that are determined to be high risk
+  * Intune enforces configuration policies for iOS devices including requirement for unlock code, device encryption (native iOS AES-256 encryption), minimum software version and jailbreak detection
+  * Data transfer logs are retained
+  * Devices can be located using Microsoft Endpoint Manager
+  * iOS devices wipe their contents after 11 failed sign-in attempts
+  * iOS devices can be remotely wiped through Microsoft Endpoint Manager
+  * iOS updates are mandatory and managed through Intune update policies.
+
+#### Residual likelihood
+
+2 – Unlikely
+
+#### Residual consequence
+
+2 – Minor
+
+#### Residual risk rating
+
+2 – Medium
+
+#### Proposed treatments
+
+None
+
+#### Target likelihood
+
+2 - Unlikely
+
+#### Target consequence
+
+2 – Minor
+
+#### Target risk rating
+
+2 - Medium

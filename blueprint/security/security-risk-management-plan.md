@@ -33,9 +33,10 @@ R13 | Attacker bypasses application control capability | High | Medium | Medium
 R14 | Password spray attack directed at Azure AD | High | Medium | Medium
 R15 | Lack of availability due to cloud service provider outage | Medium | Low | Low
 R16 | Privileged Access Workstations not implemented for administration | High | Medium | Medium
-R17 | Mobile device compromised | High | High | High
+R17 | Mobile phone compromised due to loss or theft | High | Medium | Medium
 R18 | Use of un-assessed cloud services creates exposures | High | Medium | Medium
 R19 | Users declassifying emails without the owner’s permission  | High | Medium | Medium
+R20 | Mobile phone exploited | High | Medium | Medium
 
 ## Introduction
 
@@ -1279,13 +1280,13 @@ Administration of the system is undertaken by authorised privileged users by con
 
 2 - Medium
 
-### R17 Mobile device compromised
+### R17 Mobile phone compromised due to loss or theft
 
 #### Risk overview
 
-An Apple iOS device used to access Sensitive and or security classified data is compromised as a result of the [ACSC’s Security Configuration Guide - Apple iOS 12 Devices](https://www.cyber.gov.au/publications/security-configuration-guide-apple-ios-12-devices) (September 2019)  not being fully implemented due to the usability impacts. 
+An Apple iOS device used to access Sensitive and or security classified information is compromised as a result of the device being lost or stolen.
 
-Note, the CloudSystem does not include the use of devices using the Android operating system.
+Note: the CloudSystem does not include the use of devices using the Android operating system.
 
 #### Assets affected
 
@@ -1294,7 +1295,6 @@ Note, the CloudSystem does not include the use of devices using the Android oper
 
 #### Threat sources
 
-* Adversarial – Individual – Insider, Trusted Insider, Privileged Insider
 * Adversarial – Individual – Outsider
 * Adversarial – Group – Established
 * Adversarial – Nation State
@@ -1302,8 +1302,6 @@ Note, the CloudSystem does not include the use of devices using the Android oper
 
 #### Threat events
 
-* Obtain unauthorised access
-* Exploit recently discovered vulnerabilities
 * Theft or loss of device
 
 #### Inherent likelihood
@@ -1324,17 +1322,19 @@ Note, the CloudSystem does not include the use of devices using the Android oper
   * Policy governing the use and management of mobile devices used to access classified information
   * Awareness training for users with mobile devices
 * CloudSystem treatments
-  * Partial implementation of the ACSC’s Security Configuration Guide for iOS 12 devices:
-    1. Supervised mode
+  * Full alignment with the intent of the ACSC's Security Configuration Guide for iOS 14 devices:
+    1. Supervised mode for all devices
     1. Long and complex alphanumeric device passcode
     1. Biometric device unlock disabled
-    1. Management of built-in apps (e.g., iOS Camera and Books)
+    1. Management of all apps
     1. Implementation of Intune App Protection policies
-  * Conditional Access policies require iOS devices to be compliant, using applications with modern authentication and MFA
   * Conditional Access policies only allow access from specified countries
   * Conditional Access policies block sign-ins that are determined to be high risk
   * Intune enforces configuration policies for iOS devices including requirement for unlock code, device encryption (native iOS AES-256 encryption), minimum software version and jailbreak detection
   * Data transfer logs are retained
+  * Devices can be located using Microsoft Endpoint Manager
+  * iOS devices wipe their contents after 11 failed sign-in attempts
+  * iOS devices can be remotely wiped through Microsoft Endpoint Manager
 
 #### Residual likelihood
 
@@ -1342,11 +1342,11 @@ Note, the CloudSystem does not include the use of devices using the Android oper
 
 #### Residual consequence
 
-3 – Moderate
+2 – Minor
 
 #### Residual risk rating
 
-3 – High
+2 – Medium
 
 #### Proposed treatments
 
@@ -1358,11 +1358,11 @@ None
 
 #### Target consequence
 
-3 – Moderate
+2 – Minor
 
 #### Target risk rating
 
-3 – High
+2 - Medium
 
 ### R18 Use of un-assessed cloud services creates exposures
 
@@ -1377,7 +1377,7 @@ An administrator enables a cloud service - or new feature within an existing clo
 
 #### Threat sources
 
-* Adversarial – Individual – Insider, Trusted Insider, Privileged Insider 
+* Adversarial – Individual – Insider, Trusted Insider, Privileged Insider
 * Accidental – Privileged User/Administrator
 
 #### Threat events
@@ -1512,3 +1512,87 @@ None
 #### Target risk rating
 
 2 – Medium
+
+### R20 Mobile phone exploited
+
+#### Risk overview
+
+An Apple iOS mobile device used to access sensitive or security classified information is compromised or exploited either as a result of unauthorized access to the device or exploitation of a recently discovered vulnerability.
+
+#### Assets affected
+
+* iOS Devices
+* Sensitive or security classified information
+
+#### Threat sources
+
+* Adversarial – Individual – Outsider
+* Adversarial – Group – Established
+* Adversarial – Nation State
+* Unintentional – General user
+
+#### Threat events
+
+* Obtain unauthorised access to the device
+* Exploit recently discovered vulnerabilities
+
+#### Inherent likelihood
+
+2 – Possible
+
+#### Inherent consequence
+
+3 – Moderate
+
+#### Inherent risk rating
+
+2 - High
+
+#### Ongoing and completed treatments
+
+* Agency treatments
+  * Policy governing the use and management of mobile devices used to access classified information
+  * Awareness training for users with mobile devices
+* CloudSystem treatments
+  * Full alignment with the intent of the ACSC's Security Configuration Guide for iOS 14 devices:
+    1. Supervised mode for all devices
+    1. Long and complex alphanumeric device passcode
+    1. Biometric device unlock disabled
+    1. Management of all apps
+    1. Implementation of Intune App Protection policies
+  * Conditional Access policies only allow access from specified countries
+  * Conditional Access policies block sign-ins that are determined to be high risk
+  * Intune enforces configuration policies for iOS devices including requirement for unlock code, device encryption (native iOS AES-256 encryption), minimum software version and jailbreak detection
+  * Data transfer logs are retained
+  * Devices can be located using Microsoft Endpoint Manager
+  * iOS devices wipe their contents after 11 failed sign-in attempts
+  * iOS devices can be remotely wiped through Microsoft Endpoint Manager
+  * iOS updates are mandatory and managed through Intune update policies.
+
+#### Residual likelihood
+
+2 – Unlikely
+
+#### Residual consequence
+
+2 – Minor
+
+#### Residual risk rating
+
+2 – Medium
+
+#### Proposed treatments
+
+None
+
+#### Target likelihood
+
+2 - Unlikely
+
+#### Target consequence
+
+2 – Minor
+
+#### Target risk rating
+
+2 - Medium
