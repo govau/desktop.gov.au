@@ -12,6 +12,36 @@ Please note, if a setting is not mentioned in the below, it should be assumed to
 
 The following can be found at `Microsoft Endpoint Manager > Devices > Configuration profiles`
 
+### ACSC-EdgeBrowser
+
+* Name: `ACSC-EdgeBrowser`
+* Description: -
+* Type: `Windows 10 and later`
+* Profile Type: `Administrative Templates`
+* Scope tags: `Default`
+* Assignments
+  * Included groups: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Excluded groups: -
+
+Configuration settings
+
+ClassType | CategoryPath | DisplayName | Value | Enabled
+--- | --- | --- | --- | --- |
+Device | \Microsoft Edge | Allow importing of saved passwords |  | False
+Device | \Microsoft Edge | Allow importing of extensions |  | False
+Device | \Microsoft Edge | Allow users to proceed from the HTTPS warning page |  | False
+Device | \Microsoft Edge | Control where developer tools can be used | Don't allow using the developer tools | True
+Device | \Microsoft Edge | Configure Do Not Track |  | True
+Device | \Microsoft Edge\Cast | Enable Google Cast |  | False
+Device | \Microsoft Edge\Cast | Show the cast icon in the toolbar |  | False
+Device | \Microsoft Edge\Content settings | Default pop-up window setting | Do not allow any site to show popups | True
+Device | \Microsoft Edge\Password manager and protection | Enable Microsoft Edge to save user passwords |  | False
+Device | \Microsoft Edge\SmartScreen settings | Configure Microsoft Defender SmartScreen |  | True
+Device | \Microsoft Edge\SmartScreen settings | Configure Microsoft Defender SmartScreen to block potentially unwanted apps |  | True
+Device | \Microsoft Edge\SmartScreen settings | Force Microsoft Defender SmartScreen checks on downloads from trusted sources |  | True
+Device | \Microsoft Edge\SmartScreen settings | Prevent bypassing Microsoft Defender SmartScreen prompts for sites |  | True
+Device | \Microsoft Edge\SmartScreen settings | Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads |  | True
+
 ### ACSC-Jan2020-MacroSecurity
 
 * Name: `ACSC-Jan2020-MacroSecurity`

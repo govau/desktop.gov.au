@@ -154,7 +154,6 @@ Please note, if a setting is not mentioned in the below, it should be assumed to
     * Supported authentication schemes: `Enabled`
     * Supported authentication schemes: `NTLM`, `Negotiate`
     * Default Adobe Flash setting: `Enabled`
-    * Default Adobe Flash setting: `Block the Adobe Flash Plugin`
     * Control which extensions cannot be installed: `Enabled`
     * Extension IDs the user should be prevented from installing (or * for all): `*`
     * Allow user-level native messaging hosts (installed without admin permissions): `Disabled`
@@ -163,6 +162,7 @@ Please note, if a setting is not mentioned in the below, it should be assumed to
     * Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads: `Enabled`
     * Enable site isolation for every site: `Enabled`
     * Configure Microsoft Defender SmartScreen: `Enabled`
+    * Configure Microsoft Defender SmartScreen to block potentially unwanted apps: `Enabled`
     * Allow users to proceed from the SSL warning page: `Disabled`
     * Minimum SSL version enabled: `Enabled`
     * Minimum SSL version enabled: `TLS 1.2`
