@@ -868,7 +868,7 @@ The following details the Microsoft Defender capabilities:
 * Microsoft Defender Exploit Guard – Provides Host-based Intrusion Protection System (HIPS) capabilities and replaces the Microsoft Enhanced Mitigation Experience Toolkit (EMET)
 * Microsoft Defender Application Guard – Provides hardware isolation of Microsoft Edge to protect against malicious websites. Protection is provided through the use of Hyper-V enabled containers isolated from the host operating system for opening untrusted websites
 * Microsoft Defender Credential Guard – Provides virtualisation-based security to isolate credentials to protect against identity theft attacks. Much like Device Guard, Credential Guard uses Virtual Secure Mode (VSM) to isolate processes, in this case the Local Security Authority (LSA). The LSA performs various security operations, including the storage and management of user and system credentials. Unauthorised access to the LSA can lead to credential theft attacks, such as Pass-the-Hash or Pass-The-Ticket
-* Microsoft Defender Firewall – Provides stateful packet inspection and blocking of network traffic. Windows Defender Firewall blocks unauthorized network traffic flowing into and out of the client endpoint reducing the attack surface of the device
+* Microsoft Defender Firewall – Provides stateful packet inspection and blocking of network traffic. Windows Defender Firewall blocks unauthorized network traffic flowing into and out of the client endpoint reducing the attack surface of the device.
 * Microsoft Defender SmartScreen – Provides malware and phishing website protection including downloaded files. SmartScreen protects users by performing the following
   * Analysing webpages for signs of distrustful behaviour and shows a warning page if it identifies suspicious activity.
   * Validates sites against a dynamic list of known phishing and malicious software sites and shows a warning page if it identifies page
@@ -893,7 +893,7 @@ Microsoft Defender Exploit Guard Configuration | Enabled and configured | Meets 
 Microsoft Defender Application Control Configuration | Enabled and configured | Meets ACSC Windows 10 1909 hardening guidelines and aligns with security and compliance requirements
 Microsoft Defender Smart Screen Configuration | Enabled and configured | Meets ACSC Windows 10 1909 hardening guidelines and aligns with security and compliance requirements
 Microsoft Defender Credential Guard Configuration | Enabled and configured | Aligns with security and compliance requirements. Enabled without lock allows Microsoft Defender Credential Guard to be managed remotely
-Microsoft Defender Firewall Configuration | Enabled and configured | Meets ACSC Windows 10 1909 hardening guidelines and aligns with security and compliance requirements
+Microsoft Defender Firewall Configuration | Enabled and configured | Default blocking of incoming and outbound connections as per the ACSC hardening guidance. Agencies should add additional firewalls rules as required for application and management connectivity. Further information on creating firewall rules can be referred to [Best practices for configuring Windows Defender Firewall](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/best-practices-configuring)
 
 ### Windows 10 security baselines
 

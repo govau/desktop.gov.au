@@ -246,6 +246,76 @@ user | \Microsoft Publisher 2016\Security | Publisher Automation Security Level 
   * Included groups: `rol-Agency-Administrators`, `rol-Agency-Users`
   * Excluded groups: -
 
+### Agency-MSDefenderFirewall
+
+* Name: `Agency-Firewall`
+* Description: `This profile blocks connections by default and only allows connections that match an allowed rule which is set in this profile`
+* Type: `Windows 10 and later`
+* Profile Type: `Endpoint Protection`
+* Configuration settings Microsoft Defender Firewall:
+  * File Transfer Protocol: `Block`
+  * Security association idle time before deletion: `300`
+  * Pre-shared key encoding: `Enabled`
+  * IPsec exemptions: `0 selected`
+  * Certificate revocation list verification: `Not configured`
+  * Opportunistically match authentication set per keying module: `Not configured`
+  * Packet queuing: `Not configured`
+    * Network settings Domain (workplace) network:
+      * Microsoft Defender Firewall: `Enable`
+      * Stealth mode: `Allow`
+      * IPsec secured packet exemption with Stealth Mode: `Not configured`
+      * Shielded: `Not configured`
+      * Unicast responses: to multicast broadcast: `Allow`
+      * Inbound notifications: `Block`
+      * Default action for outbound connections: `Block`
+      * Default action for inbound connections: `Block`
+      * Authorised application Microsoft Defender Firewall rules from the local store: `Not configured`
+      * Global port Microsoft Defender Firewall rules from the local store: `Not configured`
+      * Microsoft Defender Firewall rules from the local store: `Not configured`
+      * IPsec rules from the local store: `Not configured`
+    * Private (discoverable) network:
+      * Microsoft Defender Firewall: `Enable`
+      * Stealth mode: `Allow`
+      * IPsec secured packet exemption with Stealth Mode: `Not configured`
+      * Shielded: `Not configured`
+      * Unicast responses: to multicast broadcast: `Allow`
+      * Inbound notifications: `Block`
+      * Default action for outbound connections: `Block`
+      * Default action for inbound connections: `Block`
+      * Authorised application Microsoft Defender Firewall rules from the local store: `Not configured`
+      * Global port Microsoft Defender Firewall rules from the local store: `Not configured`
+      * Microsoft Defender Firewall rules from the local store: `Not configured`
+      * IPsec rules from the local store: `Not configured`
+    * Public (non-discoverable) network:
+      * Microsoft Defender Firewall: `Enable`
+      * Stealth mode: `Allow`
+      * IPsec secured packet exemption with Stealth Mode: `Not configured`
+      * Shielded: `Not configured`
+      * Unicast responses: to multicast broadcast: `Allow`
+      * Inbound notifications: `Block`
+      * Default action for outbound connections: `Block`
+      * Default action for inbound connections: `Block`
+      * Authorised application Microsoft Defender Firewall rules from the local store: `Not configured`
+      * Global port Microsoft Defender Firewall rules from the local store: `Not configured`
+      * Microsoft Defender Firewall rules from the local store: `Not configured`
+      * IPsec rules from the local store: `Not configured`
+  * Firewall rules:
+    * Agency to add applicable rules based on all applications and services that requires network connectivity. For further information on the creation of firewall rules refer to  [Create Windows Firewall rules in Intune](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/create-windows-firewall-rules-in-intune)
+    * For Intune connectivity the below rules should be created
+
+   Name | Direction | Action | Network type | Application | File path | Local Address | Remote Addresses | Protocol | Local ports | Remote ports
+    --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+   WDM Sync client | Outbound | Allow | All types | File path | %SystemRoot%\system32\omadmclient.exe| Any | Any | TCP | All ports | All ports
+   WDM Cert Installer | Outbound | Allow | All types | File path | %SystemRoot%\system32\dmcertinst.exe | Any | Any | TCP | All ports | All ports
+   WDM Device Enroller | Outbound | Allow | All types | File path | %SystemRoot%\system32\deviceenroller.exe | Any | Any | TCP | All ports | 80, 443
+   DNS | Outbound | Allow | All types | Windows service | dnscache | Any | Any | UDP | All ports | 53
+
+* Scope tags: `Default`
+* Assignments
+  * Included groups: `Rol-agency-administrators, Rol-agency-users`
+  * Excluded groups: -
+
+
 ### Agency-OneDrive-Device
 
 * Name: `Agency-OneDrive-Device`

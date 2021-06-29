@@ -58,7 +58,7 @@ menu: abac
     * Inbound connections blocked: `Yes`
     * Unicast responses to multicast broadcasts required: `Yes`
     * Stealth mode required: `Yes`
-    * Outbound connections required: `Yes`
+    * Outbound connections required: `Not Configured`
     * Inbound notifications blocked: `Yes`
     * Global port rules from group policy merged: `Yes`
     * Stealth mode blocked: `Yes`
@@ -71,7 +71,7 @@ menu: abac
     * Inbound connections blocked: `Yes`
     * Unicast responses to multicast broadcasts required: `Yes`
     * Stealth mode required: `Yes`
-    * Outbound connections required: `Yes`
+    * Outbound connections required: `Not Configured`
     * Authorized application rules from group policy merged: `Yes`
     * Inbound notifications blocked: `Yes`
     * Global port rules from group policy merged: `Yes`
@@ -382,17 +382,17 @@ menu: abac
   * Firewall
     * Firewall profile domain: `Configure`
     * Inbound connections blocked: `Yes`
-    * Outbound connections required: `Yes`
+    * Outbound connections required: `Not Configured`
     * Inbound notifications blocked: `Yes`
     * Firewall enabled: `Allowed`
     * Firewall profile private: `Configure`
     * Inbound connections blocked: `Yes`
-    * Outbound connections required: `Yes`
+    * Outbound connections required: `Not Configured`
     * Inbound notifications blocked: `Yes`
     * Firewall enabled: `Allowed`
     * Firewall profile public: `Configure`
     * Inbound connections blocked: `Yes`
-    * Outbound connections required: `Yes`
+    * Outbound connections required: `Not Configured`
     * Inbound notifications blocked: `Yes`
     * Firewall enabled: `Allowed`
     * Connection security rules from group policy not merged: `Yes`
