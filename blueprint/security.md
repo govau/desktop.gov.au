@@ -19,7 +19,7 @@ For hybrid environments:
 * [System security plan](/blueprint/security/hybrid-system-security-plan.html)
 * [System security plan (annex)](/assets/files/security/hybrid-system-security-plan-annex.xlsx)
 * [Standard operating procedures](/blueprint/security/hybrid-standard-operating-procedures.html)
-* [Continuous monitoring plan](/blueprint/security/hybrid-continuous-monitoring-plan.html)
+* [Continuous monitoring plan](/blueprint/security/continuous-monitoring-plan.html)
 
 For both:
 

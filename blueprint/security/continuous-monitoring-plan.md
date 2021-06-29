@@ -5,66 +5,81 @@ menu: security
 download: true
 ---
 
-This Continuous Monitoring Plan has been prepared to support assessment of the ongoing security posture of the DTA CloudSystem. Throughout, this document provides continuous monitoring guidance including:
+## Overview
+
+This Continuous Monitoring Plan (CMP) has been prepared to support assessment of the ongoing security posture of the Protected Utility Blueprint (the Blueprint) desktop environment. Throughout, this document provides continuous monitoring guidance including:
 
 * Developing an agency-specific continuous monitoring plan;
-* Overview of Microsoft's tools for monitoring security posture and compliance;
+* Developing measurements to assess security controls;
 * Collecting data relating to areas of security that the Agency is responsible for managing;
 * Aggregating collected monitoring data for analysis;
 * Analysing monitoring information to identify and assess the severity of security weaknesses; and
 * Responding to identified security weaknesses.
 
-Throughout this document several security monitoring tools are identified. While continuous monitoring and security monitoring are not identical, some overlap exists between the two in their purpose. Security monitoring tools gather and record information that enables identification of potential vulnerabilities that arise in a system. This information is useful in assessing the system's overall health and security posture.
+Throughout this document several security monitoring tools are identified. While continuous monitoring and security monitoring are not identical, some overlap exists between the two in their purpose. Security monitoring tools gather and record information that enables identification of potential vulnerabilities that arise in a system. This information is useful in assessing the system’s overall health and security posture.
 
 ## Purpose
 
-The [Information Security Manual (ISM) requires](https://www.cyber.gov.au/acsc/view-all-content/guidance/system-specific-security-documentation) agencies to create a Continuous Monitoring Plan as one of the system-specific documents prior to a system's operation. This is to assist agencies in identifying, prioritising and responding to security vulnerabilities.
+The [Information Security Manual (ISM) requires](https://www.cyber.gov.au/acsc/view-all-content/guidance/system-specific-security-documentation) agencies to create a CMP as one of the system-specific documents prior to a system’s operation. This is to assist agencies in identifying, prioritising and responding to security vulnerabilities.
 
-To meet this requirement, this Continuous Monitoring Plan provides agencies leveraging the CloudSystem with an outline of implemented technologies that produce continuous monitoring data. This plan also provides guidance for monitoring the security posture of the system and verifying implemented security controls remain fit-for-purpose for the system's operating and threat environment.
+To meet this requirement, this CMP provides agencies leveraging the Blueprint desktop environment (the desktop environment) with an outline of implemented technologies that produce continuous monitoring data. This plan also provides guidance for monitoring the security posture of the system and verifying implemented security controls remain fit-for-purpose for the system’s operating and threat environment.
 
-The three most common types of continuous monitoring activities are: vulnerability assessments; vulnerability scans; and penetration tests. These are not always possible or appropriate for systems that consume cloud services, such as the CloudSystem. Therefore, agencies should utilise this plan to consider what mechanisms are available to them to provide appropriate ongoing monitoring.
+The three most common types of continuous monitoring activities are: vulnerability assessments; vulnerability scans; and penetration tests. These are not always possible or appropriate for systems that consume cloud services, such as the Blueprint. Therefore, agencies should utilise this plan to consider what mechanisms are available to them to provide appropriate ongoing monitoring.
 
 ## Scope
 
-The scope of this Continuous Monitoring Plan is specific to monitoring security controls involved with the Agency's use of Microsoft 365 services as part of the CloudSystem. As the CloudSystem is implemented in collaboration with Microsoft as the Cloud Service Provider (CSP), responsibility for continuous monitoring is shared between the Agency and Microsoft.
+The scope of this CMP is specific to monitoring security controls involved with the Agency’s use of Microsoft 365 services as part of the desktop environment. As the Blueprint is implemented in collaboration with Microsoft as the Cloud Service Provider (CSP), a shared responsibility model exists to divide responsibilities relating to the security of the desktop environment.
+While continuous monitoring and security monitoring are not identical, overlap exists between the two in that many security monitoring tools gather and record monitoring information that is useful in assessing the overall security posture of a system. Agencies may wish to utilise a Security Information and Event Management System (SIEM) to aggregate monitoring information for the purpose of identifying weaknesses in the desktop environment’s security posture.
+Continuous monitoring responsibilities that a consumer of the Microsoft 365 solution is not required to manage are out of this document’s scope, these include:
 
-In the context of the blueprint CloudSystem, the following responsibilities are managed by Microsoft and are therefore out of scope of this document:
-
-* Vulnerability scanning of the Microsoft 365 platform and software
-* Penetration testing of the Microsoft 365 platform and software, and
+* Vulnerability scanning of the Microsoft 365 platform and software;
+* Penetration testing of the Microsoft 365 platform and software; and
 * Vulnerability assessment activities pertaining to the Microsoft 365 platform and software.
 
 This document covers continuous monitoring responsibilities owned by the Agency or jointly owned between the Agency and Microsoft.
-
-The CloudSystem Continuous Monitoring Plan is a living document. It is therefore anticipated that, over time, amendments and updates may be applied to the plan in the event of changes to the CloudSystem or the Agency.
+The CMP is a living document. It is anticipated that, over time, amendments and updates may be applied to the plan in the event of changes to the Blueprint, the desktop environment or the Agency.
 
 ## Developing a Continuous Monitoring Plan
 
-Agencies are free to develop the structure of their CMP as appropriate for their organisation. The ISM (security control 1163) specifies only that Agencies must:
+Agencies are free to develop the structure of their CMP as appropriate for their organisation. The [ISM specifies](https://www.cyber.gov.au/acsc/view-all-content/advice/guidelines-security-documentation) only that agencies must:
 
 * conduct vulnerability scans for systems at least monthly;
 * conduct vulnerability assessments or penetration tests for systems at least annually;
-* analysing identified security vulnerabilities to determine their potential impact and appropriate mitigations based on effectiveness, cost and existing security controls; and
-* using a risk-based approach to prioritise the implementation of identified mitigations.
+* analyse identified security vulnerabilities to determine their potential impact and appropriate mitigations based on effectiveness, cost and existing security controls
+* use a risk-based approach to prioritise the implementation of identified mitigations.
 
-Whilst agencies will be able to undertake these activities in relation to their on-premise equipment, there is limited ability to conduct vulnerability assessments, vulnerability scans and penetration tests against Cloud Service Provider (CSP) infrastructure. This document aims to assist agencies in identifying mechanisms which are available to them to provide ongoing monitoring across their implementation of the CloudSystem blueprint.
+Whilst agencies will be able to undertake these activities in relation to on-premise equipment, there is limited ability to conduct vulnerability assessments, vulnerability scans and penetration tests against CSP infrastructure.
 
-The [National Institute of Standards and Technology (NIST)](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf) outlines a standard process for conducting continuous monitoring which includes the following initiatives, which agencies can utilise when developing their continuous monitoring strategy:
+Outside of ISM requirements, this document provides further suggestions and mechanisms which are available to agencies to provide ongoing monitoring across their implementation of the Blueprint.
 
-* Define a continuous monitoring strategy based on risk tolerance that maintains clear visibility into assets and awareness of vulnerabilities, up-to-date threat information and business impacts.
-* Establish metrics and measures, status monitoring frequencies, control assessment frequencies, and where needed a technical architecture.
-* Implement a continuous monitoring program to collect the security related data required for the defined metrics and measures. Automate collection, analysis and reporting of data where possible.
-* Analyze the data gathered and Report findings, determining the appropriate response. It may become necessary to collect additional information to clarify or supplement existing monitoring data.
-* Respond to findings with technical, management, and operational mitigating activities or acceptance, transference/sharing, or avoidance/rejection.
-* Review and Update the monitoring program, revising the continuous monitoring strategy and maturing measurement capabilities to increase visibility into assets and awareness of vulnerabilities; further enhance data driven control of the security of an organization's information infrastructure; and increase organizational flexibility.
+The [National Institute of Standards and Technology (NIST)](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf) outlines a standard process for conducting continuous monitoring information which includes the following initiatives, which agencies should utilise when developing their continuous monitoring strategy:
 
-### Continuous Monitoring Plan structure
+* **Define** a continuous monitoring strategy based on risk tolerance that maintains clear visibility into assets and awareness of vulnerabilities, up-to-date threat information and business impacts.
+* **Establish** metrics and measures, status monitoring frequencies, control assessment frequencies, and where needed a technical architecture.
+* **Implement** a continuous monitoring program to collect the security related data required for the defined metrics and measures. Automate collection, analysis and reporting of data where possible.
+* **Analyze** the data gathered and Report findings, determining the appropriate response. It may become necessary to collect additional information to clarify or supplement existing monitoring data.
+* **Respond** to findings with technical, management, and operational mitigating activities or acceptance, transference/sharing, or avoidance/rejection.
+* **Review and Update** the monitoring program, revising the continuous monitoring strategy and maturing measurement capabilities to increase visibility into assets and awareness of vulnerabilities; further enhance data driven control of the security of an organization’s information infrastructure; and increase organizational flexibility.
 
-The following section provides suggested inclusions for CMP's which an agency may wish to consider.
+### Continuous Monitoring Plan Structure and Guidance
+
+The following section provides suggested inclusions and guidance for developing CMP’s which the Agency may wish to consider. The suggested sections a CMP should include are detailed in the Table below.
+
+|Section  |Detail  |
+|---------|---------|
+|**Roles and Responsibilities** | Matrix of assigned roles related to continuous monitoring.|
+|**Measurements**|List of Agency-specific measurements and expected metric targets sorted by each continuous monitoring domain.|
+|**Information Sources and Collection**|List of information sources required to calculate measurements and procedures for collection **(refer to [Attachment B: Data Collection Example](#attachment-b-data-collection-example))**.|
+|**Timeframes and Frequencies**|Define Agency-specific requirements for timeframes and frequencies.|
+|**Information Storage and Management**|Agency-specific policy decisions surrounding aggregation and storage of information.|
+|**Analysis**|Agency-specific analysis procedures.|
+|**Response**|Agency policy details around risk assessment, risk tolerance and expected response actions and procedures. (**Refer to [Attachment C: Risk Analysis Example](#attachment-c-risk-analysis-example)**).|
+|**Continuous Monitoring Assessment**|List of measurement assessment tables **(refer to [Attachment A: Measurements/Metrics Development and Analysis Examples](#attachment-a-measurementsmetrics-development-and-analysis-examples))**.|
 
 #### Roles and responsibilities
 
-The CMP should document relevant roles and responsibilities associated with performing continuous monitoring and maintaining the capabilities within the Agency. Roles and responsibilities associated with continuous monitoring that may require documentation include:
+The CMP should document relevant roles and responsibilities associated with performing continuous monitoring and maintaining the capabilities within the Agency.
+Roles associated with continuous monitoring that may require documentation include:
 
 * Chief Information Security Officer;
 * System Owner;
@@ -74,316 +89,421 @@ The CMP should document relevant roles and responsibilities associated with perf
 * Desktop Support Teams; and
 * Cloud Operations Teams.
 
-#### Information sources
+Responsibilities associated with continuous monitoring may include collecting, analysing and reporting continuous monitoring data. These responsibilities should be assigned to the relevant defined roles.
 
-The CMP should list any sources of information that are needed as part continuous monitoring, how it will be collected, the purpose it is collected for and relevant details such corporate business owners.
+#### Measurements
 
-Corporate Desktop environments generate vast quantities of digital information from sources such as network devices, databases, servers and endpoints. Agencies will need to consider which information sources they require to maintain aware of the current state of their environment.
+The CMP should outline measures that the Agency will use to evaluate whether security controls are working as intended and whether it is managing risk associated with the desktop environment appropriately.
 
-Cloud based systems are able to generate a wide range of information about their operation and use. Later sections within this document the various information sources available from Microsoft that agencies may collect and monitor to provide visibility of their Microsoft Office 365 and Azure instances.
+Measures should align with specific security objectives and aid in providing decision makers with an understanding of how security is performing within the system. The ISM  recommends the Agency’s CISO implement metrics and measures for the organisation.
 
-#### Information storage and management
+The Agency may wish to refer to guidance outlined in NIST 800-55 Performance Measurement Guide for Information Security . This guidance recommends measures are developed for security controls at the organisational, program and system levels to assess the following aspects of a security control:
+
+* Implementation – progress in implementing information security programs, specific security controls and associated policies and procedures.  
+* Effectiveness/efficiency – validating that security controls are implemented correctly, operating as intended and meeting their desired outcome.
+* Impact – the impact of a control on the Agency’s mission.
+
+For holistic assessment of security, measures should be mapped to controls within the Agency’s security control framework.
+
+Examples of security control measurements have been included in **[Attachment A: Measurements/Metrics Development and Analysis Examples](#attachment-a-measurementsmetrics-development-and-analysis-examples)**.
+
+#### Information sources & Collection
+
+The CMP should list any sources of information necessary to assess the defined measures. The Agency should detail how this information will be collected, the purpose it is collected for and relevant details such as corporate business owners.
+The Agency may consider utilising the example table provided in **[Attachment B: Data Collection Example](#attachment-b-data-collection-example)** to document their data collection requirements and methods.
+
+##### Data Gathering Tools and Sources
+
+Corporate desktop environments generate vast quantities of digital information from sources such as network devices, databases, servers and endpoints. Agencies will need to consider which information sources they require to maintain aware of the current state of their environment.
+
+Cloud based systems generate a wide range of information about their operation and use. This section provides examples of various information sources available that agencies may collect and monitor to provide visibility over the posture of their security program.
+
+The below Table lists each continuous monitoring security domain alongside applicable Microsoft and Agency tools and sources of information. The Agency may consider monitoring information from these sources to measure each domain’s security controls.
+
+|Domain  |M365 Tools  |Agency Tools and Sources  |
+|---------|---------|---------|
+|**Vulnerability & Patch Management**| Windows Server Update Service </br> Microsoft Endpoint Configuration Manager</br> Microsoft Intune </br> Microsoft Defender for Endpoint|Vulnerability scanner </br> Vulnerability database </br> Patch Management database </br> Software registry|
+|**Event & Incident Management**| MECM Endpoint Detection and Response </br> Microsoft Defender for Identity (Azure Advanced Threat Protection) </br> Microsoft Defender for Office 365| Incident database </br> SIEM |
+|**Malware Detection**|Microsoft Defender for Identity (Azure Advanced Threat Protection) </br> Microsoft Defender Antivirus </br> Microsoft Defender for Office 365 </br> Microsoft Defender for Endpoint|Incident database|
+|**Asset Management**|Microsoft Cloud App Security (MCAS) </br> Microsoft Intune </br> Microsoft Endpoint Configuration Manager|Asset management registry |
+|**Configuration Management**|Microsoft Secure Score </br> Security Center </br>  Compliance Center </br> Microsoft Attack Surface Reduction </br> Azure Active Directory Identity Protection </br> Azure Conditional Access </br> Azure Active Directory|Agency configuration database </br> Certification and authorisation registry|
+|**Network Management**|Microsoft Cloud App Security (MCAS) </br> Windows Defender Application Control </br> Conditional Access </br> Windows Firewall </br> Microsoft Intune </br> Microsoft Endpoint Configuration Manager|Network perimeter firewall|
+|**License Management**| Microsoft 365 Admin Center|Software asset registry|
+|**Information Management**|Azure Information Protection </br> Windows Information Protection </br> Information Protection (Office 365) </br> Retention Labels & Policies </br> Microsoft Cloud App Security (MCAS)|Data classification and categorization policies|
+
+##### Reference Data Sources
+
+The Agency should consider monitoring updates to the below reference data sources to gather information on software and configuration vulnerabilities.
+
+To identify and assess known vulnerabilities, the Agency should consider subscribing to receive [security notifications](https://www.microsoft.com/en-us/msrc/technical-security-notifications?rtc=1) when relevant vulnerabilities are identified in Microsoft’s tools and products. In addition, the Agency should also consider subscribing to other vulnerability advisory services to receive vulnerability updates about any non-Microsoft applications they may utilise.
+
+To assess the security of their system’s architecture, the Agency should consider monitoring updates to the Blueprint, relevant compliance standards and configuration benchmark advisories.
+
+|Category  |Reference Data Source  |
+|---------|---------|
+|**Vulnerability & Patch Management**|[Microsoft Security Notification Service](https://www.microsoft.com/en-us/msrc/technical-security-notifications?rtc=1) </br> [National Vulnerability Database](https://nvd.nist.gov/vuln/data-feeds) </br> [US-CERT](https://us-cert.cisa.gov/mailing-lists-and-feeds) </br> [ACSC Security Notifications](https://www.cyber.gov.au/acsc/register) </br> [AusCERT](https://www.auscert.org.au/resources/security-bulletins/)|
+|**Configuration Management**     |[Australian Government Information Security Manual](https://www.cyber.gov.au/acsc/view-all-content/ism) </br> [ACSC Essential Eight](https://www.cyber.gov.au/acsc/view-all-content/essential-eight) </br> [ACSC Publications](https://www.cyber.gov.au/acsc/view-all-content/publications) </br> [Protected Utility Blueprint](https://desktop.gov.au/) </br> [Center for Internet Security (CIS) Benchmarks](https://www.cisecurity.org/cis-benchmarks/)|
+
+##### Continuous Monitoring Information Elicitation Activities
+
+To elicit information about potential vulnerabilities within the organisation’s information security program, the Agency should perform the below activities.
+
+|Technique  |Detail  |
+|---------|---------|
+|**Control effectiveness assessments**|This technique would elicit detail on the coverage, effectiveness, impact and efficiency of the Agency’s security controls.|
+|**Vulnerability scans**|Vulnerability scans can be performed to identify known vulnerabilities in the Agency’s deployed software or weaknesses in the system’s configuration.|
+|**Vulnerability assessments or penetration tests**|Vulnerability scans can be performed to find known vulnerabilities in the Agency’s deployed software or weaknesses in the system’s configuration.|
+
+#### Timeframes and Frequencies
+
+The CMP should outline when and how often effectiveness reviews and testing activities are performed for each security control and associated measurement. When determining timeframes and frequencies, the Agency should establish achievable assessment frequencies commensurate with their risk appetite. Factors the Agency may wish to consider when determining frequencies include:
+
+|Consideration  |Detail  |Impact  |
+|---------|---------|---------|
+|**Criticality of controls**|Is the control critical to the effectiveness of the security program? </br> Is the control critical to the Agency’s priorities?|Controls providing highly critical functionality should be more frequently monitored.|
+|**Volatility of control**|Is the effectiveness of the security control likely to change as the system evolves?|Controls expected to be volatile should be more frequently monitored.|
+|**Robustness of controls**|Does the control have any current weaknesses inhibiting its effectiveness?|Controls with known weaknesses should be more frequently monitored until remediated.|
+|**Risk tolerance**|Does the timeframe align with the Agency’s risk tolerance?|Agencies with higher risk tolerance could perform less frequent monitoring.|
+|**Threat advisories/Vulnerability information**|Has the Agency received information that may impact the effectiveness of a control?|An ad hoc control assessment may need to be performed or monitoring frequencies altered.|
+|**Regulatory requirements**|Do mandatory timeframes exist within the Agency’s regulatory requirements?|The Agency may need to alter timeframes to align with requirements.|
+|**Reporting Requirements**|Has the Agency defined specific reporting requirements that need to be met?|The Agency may need to alter timeframes to align with requirements.|
+
+When defining assessment and response frequencies, the Agency may specify tasks assigned to applicable roles defined in [Roles and Responsibilities](#roles-and-responsibilities) section above. Examples of tasks include:
+
+* Desktop teams will review Intune reports monthly; and
+* Office 365 administrators will review Active Directory weekly.
+
+##### Required ISM Timeframes
+
+For infrastructure under the control of the Agency, such as on premises Exchange and Active Directory servers, the ISM specifies required timeframes for the activities defined in the below table:
+
+|Activity  |Frequency  |
+|---------|---------|
+|**Vulnerability scans**|At least monthly|
+|**Vulnerability assessments or penetration tests**|At least monthly|
+|**Review SOEs**|At least monthly|
+|**Review security documentation**|At least monthly|
+
+#### Information Aggregation, Storage and Management
 
 The CMP should document how information required for continuous monitoring will be stored and managed. This should include where information will be stored and relevant parties responsible for the information.
 
-To enhance the ability to identify inappropriate or unusual activity, organisations may wish to integrate the analysis of vulnerability scanning information, network monitoring, and system log information through the use of Security Information Event Management tools.
+##### Security Information and Event Management System (SIEM)
 
-#### Measurements and metrics
+To enhance the ability to identify inappropriate or unusual activity, agencies may wish to integrate the analysis of vulnerability scanning information, network monitoring, and system log information through the use of a SIEM.
 
-The CMP should outline the metrics and measures that the Agency will use to evaluate whether security controls are working as intended and whether it is managing risk associated with the CloudSystem appropriately. Metrics should align with specific security objectives and should aid in providing decision makers with an understanding of how security is performing within the system.
-Metrics and Measures that could be relevant to agencies using the CloudSystem could include things such as:
+##### Security Management Dashboards
 
-* Unpatched endpoints;
-* Administrator accounts created;
-* Failed logon attempts; and
-* Suspected phishing emails received.
+Security management dashboards are virtual security management workspaces provided by Microsoft’s customer security and compliance teams the Agency could leverage Microsoft’s security management dashboards to achieve automation of information aggregation.
+These solutions are integrated across Microsoft 365 services and provide actionable insights to help reduce risks and safeguard Microsoft 365 deployments. They provide the ability to aggregate and view monitoring information in a single location.
 
-#### Timeframes and frequencies
-
-The CMP should outline when and how often reviews and testing will be performed.
-
-For CloudSystem infrastructure within Office 365 and Azure, the Agency should specify when reviews will be conducted of various information sources. This should include the information sources that will be reviewed and how often that will occur. For example, the Agency may specify tasks such as:
-
-* Desktop Support teams will review Intune reports monthly; and
-* Office 365 administrators will review Active Directory weekly.
+|Dashboard  |Detail  |
+|---------|---------|
+|**Microsoft 365 Security Center**|Agencies can utilise [Security Center](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-securitycompliance-center) to view alerts and incidents related to their infrastructure and reports measures within Microsoft Secure Score. </br> Agencies can utilise [Secure Score](https://docs.microsoft.com/microsoft-365/security/mtp/microsoft-secure-score?view=o365-worldwide) to determine the security baseline of their Microsoft 365 configuration. Secure Score can scan a Microsoft environment, assign an overall security score to the environment’s configuration and provide recommendations to improve the security of the environment.|
+|**Microsoft 365 Compliance Center**|Agencies can use [Compliance Center](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-securitycompliance-center) to track specific compliance issues and risks. Compliance Center also provides customisable policies which can alert agencies when Microsoft 365 contravenes a particular policy.|
+|**Microsoft Cloud App Security Dashboard**|Agencies can utilise the Cloud App Security Dashboard to view security information of their cloud environment including open alerts, discovered apps, files infected with malware, azure security configuration recommendations and DLP alerts.|
 
 #### Analysis
 
-The CMP should document procedures for conducting analysis and reviews, this could take the form of things like runbooks or work instructions which allow agency personnel to conduct the necessary analysis in repeatable and consistent ways to identify potential vulnerabilities or weaknesses within the system.
+The CMP should document procedures for conducting analysis of collected information against defined measures. These processes could take the form of runbooks or work instructions. This would facilitate assessment of potential vulnerabilities or weaknesses in a manner that is repeatable and consistent.
 
-#### Assessment and response
+To analyse collected data, the Agency should calculate the measurements that were defined as part of the [Roles and Responsibilities](#roles-and-responsibilities) section. To perform this analysis, the Agency may wish to refer to the example measurements analysis tables included in **[Attachment A: Measurements/Metrics and Analysis Examples](#attachment-a-measurementsmetrics-development-and-analysis-examples)**
+
+#### Response
 
 ##### Assessment
 
-The CMP should set out the process for how identified system weaknesses and vulnerabilities will be assessed and prioritised for response. The outcome of the assessment should be a determination of the risk to the system and the agency.
+The CMP should set out the process for how identified system weaknesses and vulnerabilities will be prioritised for response. Once analysis has been completed and vulnerabilities are identified or controls do not meet their expected measurement target, the Agency should assess and manage the risk involved utilising methods detailed in their Security Risk Management Plan (SRMP). Example details of the risk assessment table have been included in **[Attachment C: Findings Analysis Example](#attachment-c-risk-analysis-example)**.
 
 The Agency should undertake analysis which allows them to reach a thorough understanding of the potential impacts of identified vulnerabilities and the risk that is posed to the Agency. This may include asking questions such as:
 
+* What is the likelihood of the vulnerability being exploited?
 * What happens/what is the impact if the vulnerability is exploited?
+* How effective are current controls in reducing potential risk?
+
+Prior to the determination of a mitigating response, the Agency should consider their risk tolerance levels and determine if other actions are appropriate such as:
+
+* Accepting,
+* Transferring, or
+* Avoiding the risk.
+
+Assessments should be conducted by suitably skilled personnel, where possible independent of the system owner or developer, or by a third party who is independent of the target of the assessment. Assessments may be performed by either using automated assessment tools or manually by appropriately skilled ICT professionals.
+
+When assessing vulnerabilities, the Agency may consider vendor security bulletins or the severity ratings assigned to security vulnerabilities under schemes such as the Common Vulnerability Scoring System.
+
+##### Responsive Actions
+
+The CMP should document potential responsive actions. These may include actions such as system configuration changes, training, procuring security tools, changing system architecture, establishing new procedures or updating security policy documentation.
+When determining the appropriate responsive action, the Agency should asking the following questions:
+
 * What are the available mitigation techniques?
 * How effective are those mitigations likely to be?
 * Who is responsible for implementing any mitigations?
 * What will the cost of implementing the mitigations be?
 
-Information that agencies can use to assist with assessing vulnerabilities includes vendor security bulletins or the severity ratings assigned to security vulnerabilities under schemes such as the Common Vulnerability Scoring System.
+When deciding on a responsive action, Agencies should consider change management and approval requirements.
 
-Assessments should be conducted by suitably skilled personnel, where possible, independent of the system owner or developer, or by a third party who is independent of the target of the assessment. Assessments may be performed by either using automated assessment tools or manually by appropriately skilled ICT professionals.
-
-##### Prioritisation
+##### Prioritisation of Response
 
 The CMP should outline how identified weaknesses and vulnerabilities will be prioritised based on their assessed risk or impact and the timeframes within which actions will be taken.
+The Agency may wish consider the timeframes specified within the [ISM](https://www.cyber.gov.au/acsc/view-all-content/advice/guidelines-system-management) under which action must be taken as outlined in the below table.
 
-The Agency may wish to take into consideration the timeframes specified within the ISM (Information Security Manual. [14.11.2020]. Guidelines for System Management.) under which action must be taken as outlined in Table 1.
+|Vulnerability Risk  |Timeframe  |
+|---------|---------|
+|**Extreme**|48 hours|
+|**High**|Two Weeks|
+|**Moderate**|Four Weeks|
+|**Low**|Four Weeks|
 
-Table 1: Information Security Manual vulnerability remediation timeframes
-
-Vulnerability Risk | Timeframe
---- | ---
-Extreme | 48 hours
-High | Two weeks
-Moderate | Four weeks
-Low | Four weeks
-
-##### Response
-
-The CMP should document response processes, including change management and documentation requirements, as well as approval processes.
-
-The Agency response to assessed vulnerability may include risk mitigation, risk acceptance, risk avoidance/rejection, or risk sharing/transfer, in accordance with organizational risk tolerance.
-
-Depending on the vulnerability identified and it's severity, action maybe required immediately or maybe implemented over a period of time. Agencies should ensure that they have in place the processes to track the progress of remediation actions as they occur.
+Depending on the vulnerability identified and its severity, action may be required immediately or may be implemented over a period of time. Agencies should consider their risk tolerance levels and verify that processes exist to track the progress of remediation actions as they occur.
 
 #### Reporting
 
-The CMP should document requirements of reporting in relation to continuous monitoring.
+The CMP should document requirements of reporting in relation to continuous monitoring. This may include details as set out in the below table.
 
-This should include the specific staff and roles to generate and receive reports, the content and format of the reports, the frequency of reports, and any tools to be used.
+|Activity  |Detail  |
+|---------|---------|
+|**Generating Reporting**|Specific personnel and roles responsible for generating reporting information.|
+|**Stakeholders and Audience**|Personnel and roles that will be receiving generated reporting.|
+|**Content and Format**|Content included in reporting and expected format the report will be presented in.|
+|**Reporting Frequency**|How often reporting is to be generated and sent to its audience.|
+|**Tools Used for Reporting**|Any tools used to generate or automate reporting.|
 
-#### Review and update
+Many of these details would be included in the analysis tables as shown in **[Attachment A: Measurements/Metrics and Analysis Examples](#attachment-a-measurementsmetrics-development-and-analysis-examples)**.
+
+#### Review and Update
 
 The CMP should outline when and under what conditions review and updates to the continuous monitoring strategy and approach will occur.
-
-Continuous monitoring processes should not be static, they should adapt based on changes in organisational threat and risk and when changes are made to CloudSystem technology and architecture. The CMP should be reviewed to ensure that it supports the organisation in operating within its acceptable risk tolerance levels, that chosen metrics remain relevant, and that data is current and complete.
+Continuous monitoring processes should not be static, they should adapt based on changes in Agency’s threat and risk and when changes are made to desktop environment technology and architecture. The CMP should be reviewed to ensure that it supports the Agency in operating within its acceptable risk tolerance levels, that chosen measurements remain relevant, and that data is current and complete.
 
 The Agency should review the contents of the CMP annually or bi-annually as required by the Agencies processes.
 
-## Microsoft Security and Compliance Center
-
-[Microsoft 365 Security Center](https://security.microsoft.com/) and [Microsoft 365 Compliance Center](https://compliance.microsoft.com/) are virtual security management workspaces provided by Microsoft's Customer Security and Compliance teams. These solutions are integrated across Microsoft 365 services and provide actionable insights to help reduce risks and safeguard Microsoft 365 deployments.
-
-Microsoft 365 Security Center is designed to allow for the monitoring and management of security across various identities, data, applications and infrastructure. Agencies can utilise Security Center to view alerts and incidents related to their infrastructure, as well as reports and metrics such as Microsoft Secure Score. Agencies can utilise Secure Score to determine the security baseline of their Microsoft 365 configuration. Secure Score can scan a Microsoft environment, assign an overall security score to the environment's configuration and provide [recommendations to improve the security of the environment](https://docs.microsoft.com/en-us/microsoft-365/security/mtp/microsoft-secure-score?view=o365-worldwide).
-
-Microsoft 365 Compliance Center is provided by Microsoft to assist with managing system security compliance requirements, including against specific compliance frameworks. Agencies can use Compliance Center to track specific compliance issues and risks. Compliance Center also provides customisable policies which can alert agencies when Microsoft 365 contravenes a particular policy.
-
-Using Microsoft's security tools can assist agencies in identifying a wide range of common security risks and misconfigurations. Examples of issues that Security Center and Compliance Center may assist with identifying include:
-
-* Administrator accounts without Multifactor Authentication enabled;
-* Applications using high risk protocols to connect to Azure Active Directory;
-* Endpoints without BitLocker enabled; and
-* Disabled Microsoft Defender functions.
-
-Microsoft 365 Security Center and Microsoft 365 Compliance Center can assist with aggregating, consuming and analysis of some of the system data detailed within this document.
-
-## Collecting continuous monitoring information
-
-The CloudSystem implements various technologies capable of monitoring security control areas that the Agency is responsible for managing as a consumer of Microsoft's cloud products. Data gathering technologies provide the capability to observe, detect, prevent or log security threats and [vulnerabilities](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf).
-
-The Agency's security personnel can leverage technologies defined throughout this section to collect monitoring information relating to areas of security they are responsible for as a consumer of Microsoft's cloud products, including:
-
-* User Authorisation and Authentication;
-* Information Protection;
-* Application Security; and
-* Network Security.
-
-### User authorisation and authentication monitoring
-
-The Agency leveraging the CloudSystem is responsible for ongoing management of the authentication and authorisation of their users. As a result of this, the Agency is also responsible for monitoring the effectiveness of user authorisation and authentication activities within the CloudSystem. The Agency can collect continuous monitoring data pertaining to user authorisation and authentication through the following technologies:
-
-* Azure Active Directory Identity Protection;
-* Azure Advanced Threat Protection; and
-* Microsoft Cloud App Security.
-
-#### Azure Active Directory Identity Protection
-
-##### Identification of identity configuration weaknesses
-
-Azure Active Directory (AD) Identity Protection is configured to monitor, detect and provide automated responses to anomalous authorisation and authentication activity within the CloudSystem environment. Azure AD Identity Protection provides continuous monitoring of access and authorisation to identify vulnerabilities in identity management configuration and policies to detect actions identified as atypical to standard user behaviour, including:
-
-* User Risk Policy – assesses the probability that a user account has been compromised by detecting risk events that are atypical of a user's behaviour.
-* Sign-in Risk Policy – analyses each sign-in of a user with aim to detect suspicious actions associated with the sign-in. Automated actions can be configured to occur if high-risk behaviour is detected. Refer to [Azure AD Identity Protection documentation](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/).
-
-#### Azure Advanced Threat Protection
-
-##### Detecting suspicious authentication activities
-
-Microsoft Azure Advanced Threat Protection (Azure ATP) monitors Active Directory (AD) traffic and provides alerts when suspicious authentication-related activities occur. Azure ATP provides User Entity Behavioural Analytics by monitoring authentication requests to on-premises AD Domain Controllers. Refer to [What is Microsoft Defender for Identity?](https://docs.microsoft.com/en-us/defender-for-identity/what-is)
-
-#### Microsoft Cloud App Security
-
-Microsoft Cloud App Security (MCAS) is a Cloud Access Security Broker (CASB) that supports various deployment modes including log collection, API connectors, and reverse proxy.
-
-##### Monitoring and control of application access
-
-The Agency can configure [MCAS access policies](https://docs.microsoft.com/en-us/cloud-app-security/access-policy-aad) to provide monitoring and control of user logins to identified cloud applications. This information is displayed in the MCAS dashboard.
-
-### Information protection monitoring
-
-The Agency leveraging the CloudSystem is responsible for managing their user's access to and handling of sensitive information. As a result of this, the Agency is responsible for monitoring the security of sensitive information transmitted to and stored within the CloudSystem. Agencies can collect continuous monitoring data of information protection controls through technologies implemented as part of the CloudSystem including:
-
-* Azure Information Protection; and
-* Microsoft Cloud App Security.
-
-#### Azure Information Protection
-
-##### Information classification and sensitive information detection
-
-[Azure Information Protection (AIP)](https://docs.microsoft.com/en-us/cloud-app-security/azip-integration) provides document and email classification labelling, and protections based on those labels. MCAS can be configured to scan for AIP classification labels and content inspection warning when new files are detected in connected apps.
-
-#### Microsoft Cloud App Security
-
-MCAS components that provide information protection capabilities include:
-
-* [File Policies](https://docs.microsoft.com/en-us/cloud-app-security/data-protection-policies) – can be configured to detect sensitive information stored within cloud apps.
-* [Admin Quarantine](https://docs.microsoft.com/en-us/cloud-app-security/use-case-admin-quarantine) – creates alerts when files are matched against an MCAS file policy and stored for administrative review.
-* [Activity policies](https://docs.microsoft.com/en-us/cloud-app-security/user-activity-policies) – monitors user activities within cloud applications15.
-* [Session policy](https://docs.microsoft.com/en-us/cloud-app-security/session-policy-aad) – provides real-time monitoring and control of user activities within authenticated sessions to identified cloud apps16.
-
-### Application security monitoring
-
-Microsoft provides resources for patching the CloudSystem's operating system and Microsoft's O365 applications. The Agency is responsible for configuring and deploying software applications to the operating system. As a result, the Agency is responsible for security controls of applications including:
-
-* Application discovery;
-* Conditional application access; and
-* Application Control.
-
-Agencies can collect continuous monitoring data of application security controls through technologies implemented as part of the CloudSystem including:
-
-* Microsoft Cloud App Security; and
-* Windows Defender Application Control.
-
-#### Microsoft Cloud App Security
-
-##### Application discovery
-
-MCAS utilises application discovery policies to monitor and discover new unapproved cloud applications and detect anomalous activities within connected, approved cloud applications. Refer to [Create Cloud Discovery policies](https://docs.microsoft.com/en-us/cloud-app-security/cloud-discovery-policies).
-
-##### Conditional application access
-
-[MCAS integrates with Azure AD Conditional Access](https://docs.microsoft.com/en-us/cloud-app-security/proxy-intro-aad) to provide conditional application access controls. Agencies can configure access and session control policies to provide users with access to applications based on specific conditions (e.g. device compliance) and monitor a user's session whilst interacting with applications18.
-
-#### Windows Defender application control
-
-##### Application Control
-
-Windows Defender Application Control (WDAC) provides the Agency with policies to detect and restrict unapproved applications that users are attempting to run, as well as restrict the code that runs in the [System Core (kernel)](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control). WDAC policies can be run in [audit mode](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies) to discover any applications that were installed or run since the policy was created.
-
-### Network security monitoring
-
-The Agency leveraging the CloudSystem is responsible for configuration and ongoing management of the network rules and network security requirements within the CloudSystem. As a result of this, the Agency is also responsible for monitoring the effectiveness of network security controls within the CloudSystem including:
-
-* Endpoint Malware Detection;
-* Host-based Firewalls; and
-* Device Monitoring and Management.
-
-The Agency can collect continuous monitoring data pertaining to user network security through technologies defined in this section.
-
-#### Microsoft Defender Antivirus
-
-Microsoft Defender Antivirus provides anti-malware and spyware protection of client devices. These protections include utilising always-on scanning, scanning of downloaded files, dedicated protection updates and cloud-delivered protection.
-
-##### Endpoint Malware Detection
-
-* [Microsoft Defender Exploit Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/enable-exploit-protection) – provides Host-based Intrusion Protection System (HIPS) capabilities21.
-* [Microsoft Defender SmartScreen](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) – provides malware and phishing website protection including validating sites against a list of known malicious sites and downloaded files against a dynamic list of common files22. 
-
-##### Host-based Firewall
-
-* Microsoft Defender Firewall – provides stateful inspection and blocking of network traffic. Windows Defender Firewall blocks unauthorised network traffic flowing into and out of the client endpoint reducing the attack surface of the device.
-
-#### Microsoft Cloud App Security
-
-Microsoft Cloud App Security (MCAS) is a Cloud Access Security Broker (CASB) that supports various deployment modes including log collection, API connectors, and reverse proxy.
-
-##### Device identification
-
-MCAS and Conditional Access App Control can identify managed devices within the organisation. Devices that are present in Intune are automatically synchronised to [MCAS](https://docs.microsoft.com/en-us/cloud-app-security/proxy-intro-aad).
-
-### Microsoft's security advisories
-
-As a consumer of Microsoft's cloud products, the Agency is responsible for collecting Microsoft's security advisories and assessing potential impact to the system's ongoing authorisation. Security advisories should be assessed in accordance with the system's time and event driven authorisation processes. Refer to [Anatomy of a Cloud Assessment and Authorisation](https://www.cyber.gov.au/acsc/view-all-content/publications/anatomy-cloud-assessment-and-authorisation).
-
-### Security testing and assurance activities
-
-To identify potential vulnerabilities, the Agency should perform penetration tests and vulnerability assessments on endpoint devices permitted to access the CloudSystem. When determining the required frequency for security testing and assurance activities, agencies should consider their current threat environment and risk tolerance. In line with ISM requirements, vulnerability assessments and penetration tests should be performed on endpoints at least annually. Refer to [Guidelines for Security Documentation](https://www.cyber.gov.au/acsc/view-all-content/advice/guidelines-security-documentation).
-
-As a consumer of Microsoft's cloud products, the Agency is not able to perform testing and assurance on system components managed by Microsoft. The Agency can verify Microsoft's IRAP assessment status via [Microsoft's Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/Australia).
-
-## Aggregation of continuous monitoring information
-
-Continuous monitoring information is aggregated into security management dashboards to facilitate monitoring performed by the Agency's security team. Additionally, technologies within the CloudSystem can integrate with the Azure Sentinel Security Information and Event Management (SIEM) solution.
-
-### Security management dashboards
-
-Security management dashboards facilitate the aggregation of security alerts for analysis.
-
-#### Microsoft Cloud App Security
-
-MCAS integrates with Microsoft Defender ATP, Azure AD Identity Protection, Azure AD Conditional Access, Azure Information Protection and Windows Defender Application Control to provide a centralised dashboard containing system security alerts and other continuous monitoring information including:
-
-* Number of open alerts;
-* Discovered apps;
-* Users with high investigation priority;
-* Application sessions and actions;
-* Malware-infected files;
-* Azure security configuration recommendations; and
-* [DLP alerts](https://docs.microsoft.com/en-us/cloud-app-security/daily-activities-to-protect-your-cloud-environment).
-
-The Agency can utilise the MCAS security management dashboard to monitor the ongoing security posture of the CloudSystem and collect information for reporting.
-
-#### Microsoft Defender ATP Security Centre
-
-In addition to the MCAS integration, Microsoft Defender ATP also provides its own dashboard to aggregate and display events originating from:
-
-* Microsoft Defender Antivirus;
-* Windows Defender Application Guard;
-* Windows Defender Device Guard;
-* Windows Defender Exploit Guard; and
-* [Windows Defender SmartScreen](https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/portal-overview).
-
-Other host-based events such as registry, memory allocation and process events are discoverable in Microsoft Defender ATP Security Centre.
-
-### SIEM integration
-
-For the purposes of aggregating continuous monitoring data for analysis, the Agency is able to integrate CloudSystem technologies with the [Azure Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) SIEM product. Azure Sentinel gathers logs and system monitoring information and provides alert detection and visibility of system events.29
-
-#### Microsoft Cloud App Security
-
-In cloud-native implementations, MCAS supports native [integration with Azure Sentinel](https://docs.microsoft.com/en-us/cloud-app-security/siem-sentinel) and the Microsoft Security Graph API. Azure Sentinel is Microsoft's cloud native SIEM offering, while the Security Graph API provides [additional partner integration](https://docs.microsoft.com/en-us/cloud-app-security/siem) solutions e.g. the Microsoft Graph Security API Add-On for Splunk.
-
-## Analysing monitoring information
-
-### Performing analysis
-
-Continuous monitoring information should be analysed to determine if there are vulnerabilities in the CloudSystem's configuration or deficiencies in the CloudSystem's security controls. When a vulnerability or control deficiency is identified, the Agency should use a risk-based approach to analysis. A risk assessment should be performed on the vulnerability or control deficiency in accordance with the Agency's risk assessment process defined in their Security Risk Management Plan (SRMP).
-
-Once the risk has been identified and assessed, the risk's rating should be compared against the Agency's risk tolerance levels. Next actions and mitigation options should be considered according to their ability to meet an acceptable level of risk.
-
-## Responding to vulnerabilities and deficiencies
-
-### Applying risk treatments
-
-Once a risk-based analysis of the identified system security deficiencies has been performed, the Agency should decide their next actions in accordance with their risk appetite. The Agency may choose to:
-
-* Mitigate;
-* Accept;
-* Transfer; or
-* Avoid the risk.
-
-### Patching technologies
-
-Many security weaknesses identified through monitoring and assurance activities are resolved through installing software patches. If patches are required to mitigate a system vulnerability, the following CloudSystem technologies can deploy software updates and security patches:
-
-* Windows Server Update Service – WSUS enables administrators to deploy the most recent Microsoft updates, control what updates are applied and when.
-* Microsoft Intune – Windows Update for Business provides management policies for several types of updates to Windows 10 devices:
-  * Feature updates: security and quality revisions, significant feature additions and changes;
-  * Quality updates: traditional operating system updates, including security, critical, and driver updates. Windows Update for Business also treats non-Windows updates (such as those for Microsoft Office or Visual Studio) as quality updates;
-  * Driver updates: non-Microsoft drivers that are applicable to managed devices; and o Microsoft product updates: updates for other Microsoft products, such as Office.
+## Attachment A: Measurements/Metrics Development and Analysis Examples
+
+Measures have been provided in this section as examples for how the Agency could approach monitoring security controls. It is important to note that the Agency should develop custom measurements, this list is for reference and is not intended to be exhaustive. These examples have been developed leveraging methods detailed in NIST 800-55 Performance Measurement Guide for Information Security.
+
+Additionally, this section identifies relevant guidance on identifying and populating required data collection details.
+
+### Guidance
+
+Agencies may refer to above guidance on developing measures and populating information. These include:
+
+* [Roles and Responsibilities](#roles-and-responsibilities)
+* [Developing Measurements](#measurements)
+* [Data Collection Sources](#information-sources--collection)
+* [Collection and Reporting Frequencies](#timeframes-and-frequencies)
+* [Reporting Details](#reporting)
+
+#### Configuration Management Measurement Example
+
+The below table provides an example configuration management measure.
+
+|Field|Data|
+|---------|---------|
+|**Measure ID**|CM-1|
+|**Goal**|All system users are identified and authenticated in accordance with the Agency’s information security policy.|
+|**Related Controls**|ISM 0974, 1173|
+|**Measure**|Percentage (%) of accounts without MFA enabled.|
+|**Type**|**Effectiveness**/Efficiency|
+|**Formula**|(Number of MFA-enabled accounts/total number of accounts) * 100|
+|**Target**|(Percentage (%) target defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|CM-1.1 Number of users with access to the system. </br>CM-1.2 Number of users exempt from MFA requirements.|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|Active Directory, Azure Conditional Access Policies, Microsoft Security Center|
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+#### Vulnerability and Patch Management Measurement Example
+
+The below table provides an example vulnerability and patch management measure.
+
+|Field  |Data  |
+|---------|---------|
+|**Measure ID**|VPM-1|
+|**Goal**|All system vulnerabilities are identified and remediated in accordance with the Agency’s information security policy.|
+|**Related Controls**|ISM 0304, 1143, 1493, 1643 |
+|**Measure**|Percentage (%) of security vulnerabilities not mitigated.|
+|**Type**|**Effectiveness**/Efficiency|
+|**Formula**|(Number of mitigations (patches or other) applied + Number of vulnerabilities accepted within risk tolerance) / (Total number of system vulnerabilities) * 100|
+|**Target**|(Percentage (%) target defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|VPM-1.1 Number of vulnerabilities identified through advisories. </br>VPM-1.2 Number of vulnerabilities identified through vulnerability scanning activities. </br> VPM-1.3 Number of mitigations (patches or other) applied. </br>VPM-1.4 Number of vulnerabilities determined not applicable. </br> VPM-1.5 Number of vulnerabilities accepted within risk tolerance.|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|Software Registry, Vulnerability Database, Patch Management Database, Microsoft Intune, Microsoft Defender for Endpoint. |
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+#### Event & Incident Management Measurement Example
+
+The below table provides an example event and incident management measure.
+
+|Field  |Data  |
+|---------|---------|
+|**Measure ID**|EIM-1|
+|**Goal**|Security incidents are reported within timeframes defined in the Agency’s Incident Response Policy.|
+|**Related Controls**|ISM 0123, 0125, 0140|
+|**Measure**|Percentage (%) of incidents reported within acceptable timeframes (calculated for each incident category).|
+|**Type**|**Effectiveness**/Efficiency|
+|**Formula**|For each incident category (number of incidents reported within Agency-defined timeframes / number of reported incidents) * 100|
+|**Target**|(target defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|EIM-1.1 Number of incidents reported for: </br> Category 1: (Incident category defined in Agency’s IRP) </br> Category 2: (Incident category defined in Agency’s IRP) </br> Category N: (Incident category defined in Agency’s IRP) </br> </br> EIM-1.2 Of incidents reported for each category, how many were reported within Agency-defined timeframes? </br>Category 1: (Incident category defined in Agency’s IRP) </br> Category 2: (Incident category defined in Agency’s IRP) </br> Category N: (Incident category defined in Agency’s IRP)|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|Incident database|
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+#### Malware Detection Measurement Example
+
+The below table provides an example malware detection measure.
+
+|Field  |Data  |
+|---------|---------|
+|**Measure ID**|MD-1|
+|**Goal**|Effectively detect and prevent instances of malware installation/execution|
+|**Related Controls**|ISM 1288|
+|**Measure**|Calculated or each malware detection tool (percentage (%) of malware detection false positives.)|
+|**Type**|**Effectiveness**/Efficiency|
+|**Formula**|For each malware detection tool (Number of alerts identified as false positives / Number of alerts) * 100)|
+|**Target**|(Percentage (%) target defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|MD-1.1 Number of malware detection alerts marked as false positives for: </br> <Tool 1> </br> <Tool 2> </br> <Tool 3> </br> </br> MD-1.2 Total number of malware detection alerts for: </br> <Tool 1> </br> <Tool 2> </br> <Tool 3>|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|Microsoft Defender Antivirus, Microsoft Defender for Endpoint, Agency-specific malware and endpoint detection tools|
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+#### Asset Management Measurement Example
+
+The below table provides an example asset management measure.
+
+|Field  |Data  |
+|---------|---------|
+|**Measure ID**|AM-1|
+|**Goal**|All devices are managed within the Agency’s device management policy.|
+|**Related Controls**|ISM 1533, 1195, 1482, 0869, 1085, 1202|
+|**Measure**|Percentage (%) of managed endpoints not compliant with MDM security policy|
+|**Type**|**Implementation**|
+|**Formula**|(Number of managed endpoints identified as out-of-compliance / Total number of managed endpoints) * 100|
+|**Target**|(Percentage (%) target defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|Number of managed endpoints identified as out-of-compliance
+Total number of managed endpoints|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|Microsoft Intune, Microsoft Endpoint Configuration Manager, Asset Management Register|
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+#### Network Management Measurement Example
+
+The below table provides an example network management measure.
+
+|Field  |Data  |
+|---------|---------|
+|**Measure ID**|NM-1|
+|**Goal**|All devices are managed in accordance with the Agency’s Asset Management Policy.|
+|**Related Controls**|ISM 1301, 1418|
+|**Measure**|Percentage (%) of devices discovered on the network that are unrecognised. |
+|**Type**|**Effectiveness**/Efficiency|
+|**Formula**|Number of unrecognised devices discovered on the network / Total number of discovered devices * 100|
+|**Target**|(Percentage (%) target defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|Number of unrecognised devices discovered during network discovery. </br> Total number of devices discovered during network discovery.|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|Asset Management List, Microsoft Defender for Endpoint, Microsoft Endpoint Manager|
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+#### License Management Measurement Example
+
+The below table provides an example license management measure.
+
+|Field  |Data  |
+|---------|---------|
+|**Measure ID**|LM-1|
+|**Goal**|Software lifecycle is effectively managed in accordance with the Agency’s Information Security Policy. |
+|**Related Controls**|ISM 1467, 1483, 1407|
+|**Measure**|Percentage (%) of deployed software that has reached End of Support. |
+|**Type**|**Effectiveness**/Efficiency|
+|**Formula**|Number of software license versions that have reached End of Support / Total number of software licenses * 100|
+|**Target**|(Percentage (%) target defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|Number of software license versions that have reached End of Support. </br> Number of software licenses.|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|Software Registry, Microsoft Defender for Endpoint.|
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+#### Information Management Measurement Example
+
+The below table provides an example information management measure.
+
+|Field  |Data  |
+|---------|---------|
+|**Measure ID**|IM-1|
+|**Goal**|Information is identified and protected in accordance with the Agency’s information security policy.|
+|**Related Controls**|ISM 1187, 1297, 0663|
+|**Measure**|Number of data loss prevention policy exceptions granted during monitoring period.|
+|**Type**|**Effectiveness**/Efficiency|
+|**Formula**|Total number of policy exceptions granted during monitoring period.|
+|**Target**|(Target total defined in accordance with Agency risk tolerance)|
+|**Implementation Evidence**|Policy exceptions granted during monitoring period.|
+|**Frequency**|Collection frequency: (e.g. monthly) </br> Reporting frequency: (e.g. monthly)|
+|**Responsible Parties**|Applicable roles and responsibilities, e.g. collector, owner, stakeholders.|
+|**Data Source**|MCAS, Microsoft Defender for Endpoint, AIP|
+|**Reporting Format**|(Agencies preferred reporting method i.e. bar graph in Monthly Health Check report)|
+
+### Attachment B: Data Collection Example
+
+This section provides an example data collection table the Agency may wish to utilise to record data collection details. Additionally, this section identifies relevant guidance on identifying and populating required data collection details.
+
+#### Guidance
+
+For each measurement, the Agency should create data collection tables for each item under “Implementation Evidence”.
+
+The following lists sections the Agency may refer to for guidance developing measures and populating information:
+
+* [Roles and Responsibilities](#roles-and-responsibilities)
+* [Data Collection Sources](#information-sources--collection)
+* [Collection and Reporting Frequencies](#timeframes-and-frequencies)
+
+#### Data Collection Table Example
+
+The below table provides an example table the Agency may wish to utilise to record data collection details.
+
+|Field  |Data  |
+|---------|---------|
+|**Relevant Measurement**|CM-1|
+|**Information Detail**|List of users without MFA enabled.|
+|**Collection Frequency**|Monthly|
+|**Source Tool**|Active Directory|
+|**Information Owner**|(Agency team or position responsible for the tool)|
+|**Role Responsible for Collection**|(Agency-specific role assigned to this task)|
+|**Information Collection Method**|Agency-specific process to elicit this information. Examples are: </br> •Process for logging in to Azure admin portal and performing manual inspection; or, </br>•Process for eliciting information through PowerShell script|
+
+### Attachment C: Risk Analysis Example
+
+This section provides an example risk analysis table that the Agency may wish to utilise when determining and prioritising a response. Additionally, this section identifies relevant guidance on risk analysis and response.
+
+#### Guidance
+
+The below lists sections the Agency may refer to for guidance developing measures and populating information;
+
+* [Relevant Assets to Each Security Domain](#information-sources--collection)
+* [Response Assessment and Prioritisation](#response)
+
+#### Risk Assessment Table Example
+
+Example detail the Agency could capture is provided in the below table. For more detail, and the Risk Matrix refer to the [Blueprint’s Security Risk Management Plan (SRMP)](https://desktop.gov.au/blueprint/security/security-risk-management-plan.html) or [Hybrid  (SRMP)](https://desktop.gov.au/blueprint/security/hybrid-security-risk-management-plan.html).
+
+|Field  |Detail  |
+|---------|---------|
+|**Risk Overview**|Brief risk statement.|
+|**Assets affected**|List of assets impacted by the risk.|
+|**Threat sources**|Types of threat actors (e.g. Adversarial – Trusted Insider).|
+|**Threat events**|Events that may occur as a result of this risk being realized.|
+|**Inherent likelihood**|Likelihood rating without controls considered.|
+|**Inherent consequence**|Consequence rating without controls considered.|
+|**Inherent risk rating**|Result from comparing Likelihood and Consequence on Risk Matrix.|
+|**Ongoing and completed treatments**|Treatments being implemented to address the risk.|
+|**Residual likelihood**|Likelihood rating with current controls considered.|
+|**Residual Consequence**|Consequence rating with current controls considered.|
+|**Residual risk rating**|Result from comparing Likelihood and Consequence on Risk Matrix.|
+|**Proposed treatments**|Risk mitigation treatments for consideration.|
+|**Target likelihood**|Desired likelihood rating with proposed treatments considered.|
+|**Target consequence**|Desired consequence rating with proposed treatments considered.|
+|**Target risk rating**|Result from comparing Likelihood and Consequence on Risk Matrix.|
