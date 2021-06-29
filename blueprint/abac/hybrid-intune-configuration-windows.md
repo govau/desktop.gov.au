@@ -272,6 +272,31 @@ ClassType | CategoryPath | DisplayName | Value | Enabled
 user | \OneDrive | Coauthor and share in Office desktop apps |  | true
 user | \OneDrive | Prevent users from syncing personal OneDrive accounts |  | true
 
+### Agency-Restricted Groups
+
+The Security Identifier (SID) of the group/s will be unique to your environment. The SID of an Azure AD group can be found using the Microsoft Graph Explorer.
+
+* Name: `Agency-RestrictedGroups`
+* Description: `Provides local admin access to endpoints for administrative staff`
+* Type: `Windows 10 and later`
+* Profile Type: `Custom`
+* Configuration settings
+  * OMA-URI Settings
+    * Name: `LocalUsersAndGroups – Administrators`
+    * Description: `Add administrators to local administrator group via configured AAD security group`
+    * OMA-URI: `./Device/Vendor/MSFT/Policy/Config/LocalUsersAndGroups/Configure`
+    * Data type: `String`
+    * Value: `<GroupConfiguration>
+                  <accessgroup desc = "Administrators">
+                    <group action = "U" />
+		                  <add member = "Security Identifier of group" />
+	                </accessgroup>
+              </GroupConfiguration>`
+* Scope tags: `Default`
+* Assignments
+  * Included groups: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Excluded groups: -
+
 ### Agency-TimeZoneEST
 
 * Name: `Agency-TimeZoneEST`

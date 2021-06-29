@@ -1139,7 +1139,7 @@ Decision Point | Design Decision | Justification
 --- | --- | ---
 OLE configuration | Block all | To meet the essential 8 requirements and to align to ACSC guidance
 
-### Local administrator
+### Restricted Groups and Device Admins
 
 The default local Administrator account is a highly privileged user account found on every Windows operating system. The Administrator account is the first account that is created during the installation for all Windows client operating systems.
 
@@ -1151,7 +1151,16 @@ If there is a requirement to utilise the local Administrator account in an on-pr
 
 LAPS allows system administrators the ability to set a different, random password for the common local administrator account on each computer in the domain and store the password for the computer's local administrator account in Active Directory, secured in a confidential attribute in the computer's corresponding Active Directory object.
 
-Local Administrator Design Decisions for all agencies and implementation types.
+For Administrative staff to manage and support endpoints the adding of groups can be configured to the local Administrators group, granting administrator privileges to the endpoint. This is through the adding of Azure Active Directory groups via a custom Intune configuration profile using LocalUsersAndGroups policies. Dependencies for this feature are detailed below:
+
+* Windows 10 Build 20H2 or higher
+* Creation of specific group/s for Administrative accounts to be added to
+* Security Identifier (SID) of each security group created
+* Administrative accounts added to the relevant security group/s that have been created
+
+Agencies should adapt the use of restricted groups to meet their support and role based access requirements. It is recommended that policies and procedures be implemented by agencies to ensure that only administrative accounts are populated in the groups.
+
+Restricted Groups and Device Admins Design Decisions for all agencies and implementation types.
 
 Decision Point | Design Decision | Justification
 --- | --- | ---
@@ -1160,6 +1169,7 @@ Local Administrator Account Name | Renamed | The local administrator account wil
 Local Administrator Account Password | Randomised | In line with the ACSC Windows 10 1909 hardening guideline policy recommendations
 Additional Local Administrator Accounts | Not Configured | Additional administrator accounts will not be created during the image deployment
 LAPS | Not Configured | Not required for the solution. The local Administrator account will be disabled and renamed
+Local Administrators Group | Configured | Provides administrative staff the ability to manage endpoints
 
 ## iOS
 
