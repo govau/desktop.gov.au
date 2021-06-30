@@ -75,16 +75,16 @@ Item | Configuration
 Assigned to | All users
 Name | All users and all devices
 Description | This is the default Windows Hello for Business configuration applied with the lowest priority to all users regardless of group membership.
-Configure Windows Hello for Business | Disabled
+Configure Windows Hello for Business | Enabled
 Use a Trusted Platform Module (TPM) | Preferred
-Minimum PIN Length | 4
+Minimum PIN Length | 6
 Maximum PIN Length | 127
 Lowercase letters in PIN | Allowed
 Uppercase letters in PIN | Allowed
 Special characters in PIN | Allowed
-PIN expiration (days) | Never
-Remember PIN history | No
-Allow biometric authentication | No
+PIN expiration (days) | 365
+Remember PIN history | 3
+Allow biometric authentication | Yes
 Use enhanced anti-spoofing, when available | Yes
 Allow phone sign-in | No
 Use security keys for sign-in | Not configured

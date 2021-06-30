@@ -1333,6 +1333,24 @@ Decision Point | Design Decision | Justification
 --- | --- | ---
 Compliance Assessment | Configured | Since mobile devices routinely leave the office environment, and the protection it affords, it is important that organisations develop a mobile device usage policy governing their use.
 
+### Intune - Windows Hello for Business
+
+Windows Hello for Business provides the ability to replace passwords with strong two-factor authentication for Windows 10 devices. Two-factor authentication is achieved with Windows Hello for Business by the following process:
+
+* The device creates as a key tied to the Trusted Platform Module (TPM) (something users have). Should the device not have TPM 2.0, software shall be used.
+* A user input is then provided in the form of a PIN (something users know) or biometric input (something users are) to verify.
+
+Agencies are to align their password policy to insure that the Windows Hello for business PIN does not match any other passwords that the user may use.
+
+For Hybrid deployments agencies will need to refer the [Planning a Windows Hello for Business Deployment](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-planning-guide) and [Windows Hello for Business Deployment Prerequisite Overview](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-identity-verification) documentation to determine the deployment type required based on its environment and requirements.
+
+Windows Hello for Business Design Decisions for hybrid implementations
+
+Decision Point | Design Decision | Justification
+--- | --- | ---
+Trust type | Configured | Defines how each Windows Hello for Business client authenticates to the on-premises Active Directory. Trust types available are key trust and certificate trust.
+Management | Configured | Provides how agencies manage users and devices. The three ways Windows Hello for Business can be managed include Group Policy, Modern Management, and mixed
+
 ### Intune - device configuration
 
 Device Configuration Profiles provide the ability to control settings and features on supported endpoints. These include, device and user settings, browser settings, and hardware settings. Device Configuration Profiles can be deployed to specific users or devices by using Azure AD groups.

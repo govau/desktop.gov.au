@@ -91,7 +91,19 @@ user | \Microsoft Publisher 2016\Security | Publisher Automation Security Level 
 * Type: `Windows 10 and later`
 * Profile Type: `Identity protection`
 * Configuration settings
-  * Configure Windows Hello for Business: `Disable`
+  * Configure Windows Hello for Business: `Enable`
+  * Minimum PIN length: `6`
+  * Maximum PIN length: `127`
+  * Lowercase letters in PIN: `Allowed`
+  * Uppercase letters in PIN: `Allowed`
+  * Special characters in PIN: `Allowed`
+  * PIN expiration (days): `365`
+  * Remember PIN history: `3`
+  * Enable PIN recovery: `Not configured`
+  * Use a Trusted Platform Module (TPM): `Not configured`
+  * Allow biometric authentication: `Enabled`
+  * Use enhanced anti-spoofing, when available: `Enabled`
+  * Certificate for on-premise resources: `Not configured`
   * Use security keys for sign-in: `Not configured`
 * Scope tags: `Default`
 * Assignments
