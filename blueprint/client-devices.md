@@ -1210,6 +1210,10 @@ MDM provides the capability to configure iOS devices. These devices must be conf
 * Branding – The Agencies branding for lock screen, wallpapers, and reporting if the device is lost can be configured.
 * Device features – Configures device features, for example, AirDrop and Bluetooth pairing, within iOS devices.
 
+Microsoft also provide a [Microsoft Supervised patterns](https://docs.microsoft.com/en-us/mem/intune/enrollment/ios-ipados-supervised-device-security-configurations) which is designed to assist in the securing iOS devices based on organisation risk requirements. 
+
+Intune and Apple Business Manager in combination can be leveraged to restrict the applications deployed to iOS devices. When restricting application deployments, the App Store is blocked and all application management is completed through the Company Portal. In this pattern, all applications must be licensed within Apple Business Manager and use device based licensing. 
+
 Securing iOS devices Design Decisions for all agencies and implementation types.
 
 Decision Point | Design Decision | Justification
@@ -1232,6 +1236,7 @@ Virtual Private Network (VPN)  | Configured | Per-app VPN will be set up to secu
 **Branding** | | |
 Lock Screen and background branding | Configured | Agency branding will be applied to endpoints. It is recommended that agencies include the contact information of the relevant IT Support in the event that a device is lost.
 **Device Features** | | |
+App Store | Blocked | To meet ACSC Essential 8 application control guidance and to align to the [Microsoft Supervised High Security pattern](https://docs.microsoft.com/en-us/mem/intune/enrollment/ios-ipados-supervised-device-security-configurations#supervised-high-security-level-3)
 Disable Screenshot and screen recording | Disable | Disablement of screenshot and screen recording, disable users from taking a snapshot of protected documents
 Allow iCloud backup, document data and Keychain | Disable | The Agencies data on mobile devices must be uploaded into the Agencies tenant. This is done to prevent accidental information being backed up to iCloud or another unsecure data store
 Managed Open-In | Enable  | Managed Open-In is enable segregates between corporate managed and personal application in an iOS device. This in line with the ACSC iOS Secure Configuration Hardening guide for PROTECTED devices.
@@ -1254,7 +1259,7 @@ Securing iOS Design Decisions for all agencies and implementation types.
 Decision Point | Design Decision | Justification
 --- | --- | ---
 Managed Applications | Microsoft Corporate Portal<br>Microsoft Azure Information Protection<br>Microsoft Word<br>Microsoft Excel<br>Microsoft Outlook<br>Microsoft PowerPoint<br>Microsoft Teams<br>Microsoft Edge<br>Adobe Reader<br>Microsoft OneDrive<br>Microsoft OneNote<br>Microsoft Whiteboard<br>Microsoft Planner<br>PowerApps | This is to meet the Agencies requirement for managed applications
-Application VPN configuration | Configured for Managed Applications | Managed applications will use VPN to secure its connection to the Agencies Office 365 tenant
+Application VPN configuration | Configured for Managed Applications | Managed applications will use VPN to secure its connection to the Agencies Microsoft 365 tenant
 Disable organisation data to be backed up to iCloud | Disable | PROTECTED must be stored within the Agencies environment / corporate data store
 Encrypt organisation data in mobile device | Configured | To ensure encryption requirements are met based on ACSC hardening requirements. 
 Send organisation data to unmanaged apps | Policy managed apps with Open In/Share Filtering | Prevents data to be shared between managed application stated above and other unmanaged application on the device

@@ -75,7 +75,7 @@ The following can be found at `Microsoft Endpoint Manager > Devices > Configurat
     * Block download of explicit sexual content in Apple Books: `Yes`
     * Allow managed apps to write contacts to unmanaged contacts accounts: `Not configured`
     * Rating Region: `No region configured`
-    * Block App store: `Not configured`
+    * Block App store: `Yes`
     * Block installing apps using App Store: `Not configured`
     * Block automatic app downloads: `Not configured`
     * Block playback of explicit iTunes music, podcast, or news content: `Yes`

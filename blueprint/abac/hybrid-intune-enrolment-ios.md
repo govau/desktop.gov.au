@@ -4,25 +4,37 @@ title: Hybrid - Microsoft Endpoint Manager - Intune enrolment for iOS devices
 menu: abac
 ---
 
-## Apple Device Enrolment Program
+## Apple Automated Device Enrollment
 
-`Intune > Devices > Enroll devices > Apple enrollment > Enrollment program tokens`
+`Microsoft Endpoint Manager > Devices > Enroll devices > Apple enrollment > Enrollment program tokens`
 
-* Name: `<Agency Acronym> iOS DEP enrolment`
+* Name: `<Agency Acronym> iOS ADE enrolment`
 * Description: -
 * Platform: `iOS`
 * Token
-  * Token name: `Intune Dev`
-  * Program type: `Device Enrollment Program`
+  * Token name: `Intune ADE`
+  * Program type: `Apple Business Manager`
   * Apple ID: `<Agency ID>@<Agency>.gov.au`
-  * Default iOS Enrollment Profile: `<Agency Acronym> iOS DEP enrolment`
-* Management Settings
+  * Token: `Generated in Apple Business Manager Portal below`
+
+`Apple Business Manager Portal > Settings > Device Management Settings`
+
+* Server Name: `Intune MDM`
+* Authorisation information: `PEM file from Microsoft Endpoint Manager`
+
+## Apple Enrollment Profile
+
+* Name `<Agency Acronym> iOS enrollment profile`
+* Description: -
+* User Affinity & Authentication Method
   * User affinity: `Enroll with User Affinity`
   * Select where users must authenticate: `Company Portal`
-  * Install Company Portal with VPP: `No VPP tokens found`
+  * Install Company Portal with VPP: `Use Token`
+  * Run Company Portal in Single App Mode until authentication: `No`
 * Management Options
-  * Locked enrollment: `Yes`
-  * Sync with computers: `Deny All`
+  * Supervised: `Yes`
+* Locked enrollment: `Yes`
+* Sync with computers: `Deny All`
 * Device Name
   * Apply device name template (supervised only): `Yes`
   * Device Name Template: `<Agency Acronym>-{SERIAL}-{DEVICETYPE}`
@@ -40,20 +52,26 @@ menu: abac
   * Zoom: `Show`
   * Siri: `Hide`
   * Diagnostic Data: `Hide`
+  * Restore Completed: `Hide`
+  * Software Update Completed: `Hide`
   * Display Tone: `Show`
   * Privacy: `Hide`
   * Android Migration: `Hide`
-  * Home Button: `Show`
-  * iMessage & FaceTime: `Show`
-  * Onboarding: `Hide`
-  * Screen Time: `Hide`
-  * SIM Setup: `Show`
-  * Software Update: `Show`
+  * Onboarding:
   * Watch Migration: `Hide`
+  * Screen Time: `Hide`
+  * Software Update: `Show`
+  * SIM Setup: `Show`
   * Appearance: `Show`
-  * Express Language: `Show`
-  * Preferred Language Order: `Show`
   * Device to Device Migration: `Hide`
+  * Registration: `Show`
+  * FileVault: `Hide`
+  * iCloud diagnostics: `Hide`
+  * iCloud Storage: `Hide`
+
+### Default Profile
+
+* Set Default Profile:`<Agency Acronym> iOS enrollment profile`
 
 ## Enrolment types (preview)
 

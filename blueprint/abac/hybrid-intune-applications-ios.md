@@ -4,9 +4,58 @@ title: Hybrid - Microsoft Endpoint Manager - Intune applications for iOS devices
 menu: abac
 ---
 
+## Apple Business Manager Applications
+
+### Apple Business Manager VPP licenses
+
+For each of the following apps complete the license purchase in the Apple Business Manager Portal:
+* Applications: 
+  * Microsoft Company Portal
+  * Adobe Acrobat Reader
+  * Microsoft PowerApps
+  * Microsoft Edge
+  * Microsoft Excel
+  * Microsoft Outlook
+  * Microsoft PowerPoint
+  * Microsoft Word
+  * Microsoft Office
+  * Microsoft OneNote
+  * Microsoft Planner
+  * Microsoft Power BI
+  * Azure Information Protection
+  * Microsoft SharePoint
+  * Microsoft StaffHub
+  * Microsoft OneDrive
+  * Microsoft Teams
+  * Microsoft Stream
+  * Microsoft Visio Viewer
+  * Microsoft Whiteboard
+* Assign to: `Intune MDM`
+* Quantity: `Number of Agency Devices`
+
+
+### Apple Business Manager location token
+
+`Apple Business Manager > Settings > Apps and Books`
+
+* Location Token: `Download Location Token`
+
+`Microsoft Endpoint Manager > Tenant Administration > Connectors and tokens > Apple VPP tokens`
+
+* Token Name: `<Agency Acronym> VPP token`
+* Apple ID: `<Agency ID>@<Agency>.gov.au`
+* VPP token file: `Downloaded from Apple Business Manager above`
+* Settings:
+  * Take control of token from another MDM: `Yes`
+  * Country/Region: `Australia`
+  * Type of VPP account: `Business`
+  * Automatic updates: `Yes`
+  * I grant Microsoft permission to send both user and device information to Apple: `I agree`
+* Scope tags: `Default`
+
 ## Intune applications
 
-The following Microsoft Endpont Manager - Intune (Intune) applications can be found in the Azure Portal at `Microsoft Endpoint Manager > Apps > All apps`
+The following Microsoft Endpoint Manager - Intune (Intune) applications can be found in the Azure Portal at `Microsoft Endpoint Manager > Apps > All apps`
 
 ### Adobe Acrobat Reader for PDF
 
@@ -32,6 +81,7 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Available for enrolled devices: `rol-Agency-Administrators`, `rol-Agency-Users`
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft Authenticator
 
@@ -57,6 +107,7 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft Edge
 
@@ -78,10 +129,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft Edge](/assets/images/abac/microsoft-edge.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft Excel
 
@@ -103,10 +155,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft Excel](/assets/images/abac/microsoft-excel.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft OneDrive
 
@@ -128,10 +181,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft OneDrive](/assets/images/abac/microsoft-onedrive.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft OneNote
 
@@ -154,9 +208,10 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
 * Scope tags: `Default`
 * Assignments
   * Required: -
-  * Available for enrolled devices: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Available for enrolled devices: `grp-iOS-Dynamic`
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft Outlook
 
@@ -178,10 +233,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft Outlook](/assets/images/abac/microsoft-outlook.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft PowerPoint
 
@@ -204,9 +260,10 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
 * Scope tags: `Default`
 * Assignments
   * Required: -
-  * Available for enrolled devices: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Available for enrolled devices: `grp-iOS-Dynamic`
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft SharePoint
 
@@ -229,9 +286,10 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
 * Scope tags: `Default`
 * Assignments
   * Required: -
-  * Available for enrolled devices: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Available for enrolled devices: `grp-iOS-Dynamic`
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft Teams
 
@@ -253,10 +311,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft Teams](/assets/images/abac/microsoft-teams.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft Word
 
@@ -278,10 +337,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft Word](/assets/images/abac/microsoft-word.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Power Apps
 
@@ -303,10 +363,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![PowerApps](/assets/images/abac/microsoft-power-apps.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ### Microsoft Whiteboard
 
@@ -328,10 +389,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft Whiteboard](/assets/images/abac/Whiteboard.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
   ### Microsoft Planner
 
@@ -353,10 +415,11 @@ The following Microsoft Endpont Manager - Intune (Intune) applications can be fo
   * Logo: ![Microsoft Planner](/assets/images/abac/Planner.png)
 * Scope tags: `Default`
 * Assignments
-  * Required: `rol-Agency-Administrators`, `rol-Agency-Users`
+  * Required: `grp-iOS-Dynamic`
   * Available for enrolled devices: -
   * Available with or without enrollment: -
   * Uninstall: -
+  * License Type: `Device licensing`
 
 ## iOS app protection policy
 
